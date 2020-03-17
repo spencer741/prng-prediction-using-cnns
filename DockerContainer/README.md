@@ -1,9 +1,14 @@
 # How to setup for team7 workflow
+
+Note I am running Windows 10 and using powershell, but the commands/instructions are pretty much the same for other platforms. On a unix-based platform, you will use / instead of \ when specifying the path.
+
 #### Pre-reqs
-Have docker installed and setup on your machine. (This is the most difficult part, depending on the platform and build your machine is on. Contact me (spencer) in the slack if you need help, i'll be glad to help).
+Have docker installed and setup on your machine. (This can be tricky depending on the platform and build your machine is on. Contact me (spencer) in the slack if you need help, i'll be glad to help).
+
+Have Git installed and setup on your machine.
 
 #### Instructions
-Navigate to where you want your local copy of our Team7 repository to be. (for this, I am just putting it on the Desktop [win10])
+Navigate to where you want your local copy of our Team7 repository to be. (for this, I am just putting it on the Desktop)
 
 Type:
 ```
@@ -17,15 +22,15 @@ Then Type:
 ```
 docker build -t dockercontainer DockerContainer
 ```
-Before you run the command below, make sure you modify the path "C:\Users\Spencer\Desktop\S20-team7-project\WorkSpace" to include the path to your local copy of the repository and then /WorkSpace.
+Before you run the command below, make sure you modify the path "C:\Users\Spencer\Desktop\S20-team7-project\WorkSpace" to include the path to your local copy of the repository (C:\Users\YOURUSERNAMEHERE\Desktop\S20-team7-project\WorkSpace). Make sure to include \WorkSpace.
 
-What we are doing here is building a local docker container where we run Dr.Phillip's Jupyter Lab stack. The /WorkSpace directory in the (local) Jupyter Lab will be mapped to the /WorkSpace folder in our repository. This means you can type the docker run command below, open up the file you want to work on in (local) Jupyter, save it, and then push your changes to the remote repo. Since all changes get persisted to the /WorkSpace folder within the repo, this is more of an automated workflow for what we are trying to do.
+***What we are doing here is building a local docker container where we run Dr.Phillip's Jupyter Lab stack. The /WorkSpace directory in the (local) Jupyter Lab will be mapped to the /WorkSpace folder in our repository. This means you can type the docker run command below, open up the file you want to work on in (local) Jupyter, save it, and then push your changes to the remote repo. Since all changes get persisted to the /WorkSpace folder within the repo, this is more of an automated workflow for what we are trying to do.***
 
 ```
 docker run -it --rm -p 8888:8888 --user root -e JUPYTER_ENABLE_LAB=yes -e GRANT_SUDO=yes -v C:\Users\Spencer\Desktop\S20-team7-project\WorkSpace:/home/jovyan/WorkSpace dockercontainer
 ```
 
-The latter saves a lot of hassle... but you can always go the more manual route and clone the repo, upload the file you want to work on to (Dr.Phillip's) Jupyter Lab server, work on the file, download it, replace it with the old one in the repository, commit and push to persist your changes.
+**The above saves a lot of hassle... but you can always go the more manual route: clone the repo, upload the file you want to work on to Dr.Phillip's Jupyter Lab server, work on the file, download it, replace it with the old one in the repository, commit and push to persist your changes.**
 
 Now, to access Jupyter Labs, look for something like this in your command line output:
 ```
