@@ -1,8 +1,9 @@
 # How to setup for team7 workflow
-
+#### Pre-reqs
 Have docker installed and setup on your machine. (This is the most difficult part, depending on the platform and build your machine is on. Contact me (spencer) in the slack if you need help, i'll be glad to help).
 
-Then navigate to where you want your local copy of our Team7 repository to be. (for this, I am just putting it on the Desktop [win10])
+#### Instructions
+Navigate to where you want your local copy of our Team7 repository to be. (for this, I am just putting it on the Desktop [win10])
 
 Type:
 ```
