@@ -12,6 +12,19 @@ ideally we can implement all of the ones in this list https://en.wikipedia.org/w
     [Mersenne Twister (1998)](https://en.wikipedia.org/wiki/Mersenne_Twister)
 '''
 
+'''
+There is a list of random number generators we need to find/ create python implementations for. (Wiki links in the project proposal). It looks like the call definition will look something like 
+
+PRNGfunc(seed, n). 
+The function should return a list of n generated numbers using the generation method
+
+For example if I call PRNG(seed, 10)
+It might return something like
+[3,5,10,1,31,17,2,4,6,7]
+
+We will control parsing the n-length list and handling seeds externally. This plays logically with separation of concerns for our usecase.
+
+'''
 def Middle_Square():
     print("Middle_Square")
     
