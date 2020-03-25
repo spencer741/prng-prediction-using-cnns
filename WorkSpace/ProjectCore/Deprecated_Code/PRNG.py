@@ -10,3 +10,6 @@ seed(int(seedNum))
 for _ in range(int(rang)):
 	value = rand.randrange(int(rang))
 	print(value, end='')
+    
+    
+    

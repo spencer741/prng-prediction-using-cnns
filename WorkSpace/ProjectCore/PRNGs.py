@@ -24,65 +24,36 @@ It might return something like
 
 We will control parsing the n-length list and handling seeds externally. This plays logically with separation of concerns for our usecase.
 
+NOTE: Please read SeedGenerator.py for notes about the seed generation method used.
+
 '''
 
 import sys
 
+
+'''
+[Middle-square method (1946)](https://en.wikipedia.org/wiki/Middle-square_method)
+
+Weakness Note from link ...
+For a generator of n-digit numbers, the period can be no longer than 8n. If the middle n digits are all zeroes, the generator then outputs zeroes forever. If the first half of a number in the sequence is zeroes, the subsequent numbers will be decreasing to zero. While these runs of zero are easy to detect, they occur too frequently for this method to be of practical use. The middle-squared method can also get stuck on a number other than zero.
+
+'''
 def Middle_Square(seed, listlength):
     print("Middle_Square")
-    
-    #Create a list of length listlength
     numlist = []
-    
-    
-    #seed_number = int(input("Please enter a four digit number:\n[####] "))
-    #number = seed_number
-    
-    
     for i in range(listlength):
-        #list that is one number, broken up into digits, since we are generating a digit at a time. the length is based on the seed.
-        tempnumlist = []
-        #initializers for inner looping to work
-        already_seen = set()
-        counter = 0
-        count = 0
-        number = 0
-        while number not in already_seen:
-            counter += 1
-            already_seen.add(number)
-            number = int(str(seed * seed).zfill(8)[2:6])  # zfill adds padding of zeroes
-            while (number > 0):
-                number = number//10
-                count = count + 1
-                #print (count)
-                #print (number)
-                if (count % 10 != 0):
-                    tempnumlist.append(number)
-                    #print(f"{number}", end = '')
-                elif (count % 10 == 0):
-                    tempnumlist.append(number)
-                    #print(f"{number}")
-        numlist.append(int(''.join(map(str,tempnumlist)))) #add tempnumlist to numlist as one number.
+        seedlength = len(str(seed))
+        #print("seedlen", seedlength)
+        seed = str(int(seed) * int(seed)).zfill(2 * seedlength) #fill leading zeros if seed*seed is less than (2*seed) digits long
+        #print("newseed", seed)
+        half = int(seedlength / 2)
+        seed = seed[(half):(seedlength + half)]
+        #print("finalseed", seed)
+        #print(seed)
+        numlist.append(seed)
+    #print(numlist)
+    return(numlist)
         
-    print("numlist", numlist)
-      
-        
-def midsquare(seed, listlength):
-    seed_number = int(seed)
-    number = seed_number
-    already_seen = set()
-    counter = 0
-
-    while number not in already_seen:
-        counter += 1
-        already_seen.add(number)
-        number = int(str(number * number).zfill(8)[2:6])  # zfill adds padding of zeroes
-        print(f"#{counter}: {number}")
-
-    print(f"We began with {seed_number}, and"
-          f" have repeated ourselves after {counter} steps"
-          f" with {number}.")
-    
 def Lehmer():
     print("Lehmer")
     
