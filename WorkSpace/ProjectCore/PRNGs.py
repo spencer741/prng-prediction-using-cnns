@@ -65,7 +65,7 @@ def Middle_Square(seed, listlength):
 def Lehmer():
     print("Lehmer")
     
-def Linear_Congruential():
+def Linear_Congruential(limits=[0,1], size=1, int_param=1):
     series = []
     modulus = 12387409   
     seed = time.clock()       
