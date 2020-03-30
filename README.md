@@ -2,7 +2,7 @@
 
 To start contributing, read the tutorial [here](https://github.com/CSCI4850/S20-team7-project/tree/master/DockerContainer)
 
-### To Do (NOTE, this list is deprecated. Frequent updates in Core code and milestones).
+### To Do (NOTE, frequent updates in core code and milestones).
 - [X] Modify project proposal to accurately reflect our revised methodology.
 - [X] Email all authors of referenced research for code and materials [Check Here](https://github.com/CSCI4850/S20-team7-project/blob/master/Email_Inquiry)
 - [X] Enhance group workflow by setting up docker and mapped volume to (local) repo, where changes can easily be made and pushed.[here](https://github.com/CSCI4850/S20-team7-project/tree/master/DockerContainer)
