@@ -66,6 +66,33 @@ def Lehmer():
     print("Lehmer")
     
 def Linear_Congruential():
+    series = []
+    modulus = 12387409   
+    seed = time.clock()       
+    multiplier = 11234345 
+    increment = 7569
+    #Generate the first pseudorandom number and add it to the empty list.
+    next = (seed * multiplier + increment) % modulus
+    series = series + [next]
+    #Then generate the remaining pseudorandom numbers with LCG. 
+    for n in range(0, size-1):
+        next = (series[n] * multiplier + increment) % modulus
+        series = series + [next]
+    #Adjust the numbers to account for the range specified.
+    limit_divisor = modulus/limits[1]
+    for i in range(0, len(series)):
+        series[i] = series[i]/limit_divisor
+        print(series[i])
+    #Check the integer parameter
+    if int_param:
+        if size == 1:
+            return int(series[0])
+        intify = lambda a: int(a)
+        return map(intify, series)
+    else:
+        if size == 1:
+            return series[0]
+        return series
     print("Linear_Congruential")
     
     
