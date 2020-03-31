@@ -61,11 +61,26 @@ def Middle_Square(seed, listlength):
         numlist.append(seed)
     #print(numlist)
     return(numlist)
-        
+'''
+Notes:
+If c = 0, the generator is often called a multiplicative congruential generator (MCG), or Lehmer RNG. If c ≠ 0, the method is called a mixed congruential generator.
+
+
+While the Lehmer RNG can be viewed as a particular case of the linear congruential generator with c=0, it is a special case that implies certain restrictions and properties. In particular, for the Lehmer RNG, the initial seed must be coprime to the modulus m that is not required for LCGs in general. The choice of the modulus m and the multiplier a is also more restrictive for the Lehmer RNG. In contrast to LCG, the maximum period of the Lehmer RNG equals m−1 and it is such when m is prime and a is a primitive root modulo m. 
+
+'''        
 def Lehmer():
     print("Lehmer")
     
-def Linear_Congruential(modulus, a, c, seed, listlength):
+'''
+Notes:
+The generator is not sensitive to the choice of c, as long as it is relatively prime to the modulus (e.g. if m is a power of 2, then c must be odd), so the value c=1 is commonly chosen. 
+
+If c = 0, the generator is often called a multiplicative congruential generator (MCG), or Lehmer RNG. If c ≠ 0, the method is called a mixed congruential generator.
+
+Parameters were chosen based on 2^32 in table 2 of https://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=BBA0C7ED3ADAB606642BB8D939774B4F?doi=10.1.1.34.1024&rep=rep1&type=pdf
+'''
+def Linear_Congruential(seed, listlength, modulus=4294967291, a=1588635695, c=1 ):
     numlist = []
     for i in range(listlength):
         seed = (a * seed + c) % modulus
@@ -77,13 +92,15 @@ def Lagged_Fibonacci():
     print("Lagged_Fibonacci")
     
     
-def Wuchmann_Hill():
-    print("Wuchmann_Hill")
+def Wichmann_Hill():
+    print("Wichmann_Hill")
     
-    
+'''
+A specific implementation of a Lehmer generator, widely used because built-in in the C and C++ languages as the function `minstd'. 
+
 def Park_Miller():
     print("Park_Miller")
-    
+''' 
     
 def Maximally_Periodic_Reciprocals():
     print("Maximally_Periodic_Reciprocals")
