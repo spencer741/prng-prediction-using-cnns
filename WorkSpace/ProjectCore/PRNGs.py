@@ -70,6 +70,40 @@ While the Lehmer RNG can be viewed as a particular case of the linear congruenti
 
 '''        
 def Lehmer():
+    class Lehmer:
+    def __init__(self,a,m,q,r):
+        self.a = a
+        self.m = m
+        self.q = q
+        self.r = r
+        self.seed = 0
+    def lehmerRNG(self,seed):
+        if(seed <= 0):
+            self.seed = seed
+    def Next(self):
+        hi = self.seed / self.q
+        lo = self.seed % self.q
+        self.seed = (self.a * lo) - (self.r- hi)
+        if(self.seed <= 0):
+            self.seed += self.m
+        return(self.seed * 1.0 / self.m)
+        
+    import random
+    hi = 10 
+    lo = 0
+    a = 16807
+    q = 2147483647
+    m = 127773
+    r = 2836
+    lehmer = Lehmer(a,m,q,r)
+    lehmer.lehmerRNG(3)
+    for i in range(20):
+        x = lehmer.Next()
+        ri = (hi - lo) * x + lo
+        print(x)
+    
+    
+    
     print("Lehmer")
     
 '''
