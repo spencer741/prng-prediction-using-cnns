@@ -68,7 +68,8 @@ If c = 0, the generator is often called a multiplicative congruential generator 
 
 While the Lehmer RNG can be viewed as a particular case of the linear congruential generator with c=0, it is a special case that implies certain restrictions and properties. In particular, for the Lehmer RNG, the initial seed must be coprime to the modulus m that is not required for LCGs in general. The choice of the modulus m and the multiplier a is also more restrictive for the Lehmer RNG. In contrast to LCG, the maximum period of the Lehmer RNG equals m−1 and it is such when m is prime and a is a primitive root modulo m. 
 
-'''        
+'''    
+'''
 def Lehmer():
     class Lehmer:
     def __init__(self,a,m,q,r):
@@ -105,6 +106,7 @@ def Lehmer():
     
     
     print("Lehmer")
+    '''
     
 '''
 Notes:
@@ -121,9 +123,39 @@ def Linear_Congruential(seed, listlength, modulus=4294967291, a=1588635695, c=1 
         numlist.append(seed)
     print("Linear_Congruential")
     
-    
-def Lagged_Fibonacci():
+'''
+This is two tap, not three tap...
+It's a "lagged" generator, because "j" and "k" lag behind the generated pseudorandom value. Also, this is called a "two-tap" generator, in that you are using 2 values in the sequence to generate the pseudorandom number. However, a two-tap generator has some problems with randomness tests, such as the Birthday Spacings. Apparently, creating a "three-tap" generator addresses this problem.
+'''    
+def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
+    if(!(0 < j and j < k)):
+        return
+    #If addition is used, it is required that at least one of the first k values chosen to initialise the generator be odd;
     print("Lagged_Fibonacci")
+    if(len(str(seed)) < k):
+        return;
+    
+    flag = False
+    for i in range(k):
+        if(int(str(seed)[i]) % 2 != 0):
+            flag = True
+            break;
+            
+    numlist = []
+            
+    if(flag):
+        for n in xrange(10):
+            for i in xrange(len(s)):
+                if i is 0:
+                    out = (s[j-1] + s[k-1]) % 10 # the pseudorandom output
+                elif 0 < i < 6:
+                    s[i] = s[i+1] # shift the array
+                else:
+                    s[i] = out
+                    print s[i], # print the result
+            
+       
+    return numlist
     
     
 def Wichmann_Hill():
