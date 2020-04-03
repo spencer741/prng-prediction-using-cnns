@@ -192,9 +192,18 @@ def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
                     seedlist[i] = val
     return numlist
     
-    
+'''
+<Wichmann_Hill finished=false/>
+<notes>
+    Consists of three linear congruential generators with different prime moduli, 
+    each of which is used to produce a uniformly distributed number between 0 and 1.
+    These are summed, modulo 1, to produce the result.
+
+</notes>
+'''
 def Wichmann_Hill():
     print("Wichmann_Hill")
+    
     
 '''
 A specific implementation of a Lehmer generator, widely used because built-in in the C and C++ languages as the function `minstd'. 
