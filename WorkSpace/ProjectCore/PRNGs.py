@@ -1,46 +1,48 @@
 '''
-Listed below are the PRNG implementations we want to focus on (this covers most of them from 1946-1998); however, 
-ideally we can implement all of the ones in this list https://en.wikipedia.org/wiki/List_of_random_number_generators
+<notes>
+    Listed below are the PRNG implementations we want to focus on (this covers most of them from 1946-1998); however, 
+    we need to implement as many in this list as possible: https://en.wikipedia.org/wiki/List_of_random_number_generators
 
-    [Middle-square method (1946)](https://en.wikipedia.org/wiki/Middle-square_method)
-    [Lehmer generator (1951)](https://en.wikipedia.org/wiki/Lehmer_random_number_generator)
-    [Linear congruential generator (1958)](https://en.wikipedia.org/wiki/Linear_congruential_generator)
-    [Lagged Fibonacci (1965)](https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator)
-    [Wichmann-Hill generator (1982)](https://en.wikipedia.org/wiki/Wichmann%E2%80%93Hill)
-    [Park-Miller generator (1988)](https://en.wikipedia.org/wiki/Lehmer_random_number_generator)
-    [Maximally periodic reciprocals (1992)](https://en.wikipedia.org/wiki/Sophie_Germain_prime)
-    [Mersenne Twister (1998)](https://en.wikipedia.org/wiki/Mersenne_Twister)
-'''
+        [Middle-square method (1946)](https://en.wikipedia.org/wiki/Middle-square_method)
+        [Lehmer generator (1951)](https://en.wikipedia.org/wiki/Lehmer_random_number_generator)
+        [Linear congruential generator (1958)](https://en.wikipedia.org/wiki/Linear_congruential_generator)
+        [Lagged Fibonacci (1965)](https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator)
+        [Wichmann-Hill generator (1982)](https://en.wikipedia.org/wiki/Wichmann%E2%80%93Hill)
+        [Park-Miller generator (1988)](https://en.wikipedia.org/wiki/Lehmer_random_number_generator)
+        [Maximally periodic reciprocals (1992)](https://en.wikipedia.org/wiki/Sophie_Germain_prime)
+        [Mersenne Twister (1998)](https://en.wikipedia.org/wiki/Mersenne_Twister)
 
-'''
-There is a list of random number generators we need to find/ create python implementations for. (Wiki links in the project proposal). It looks like the call definition will look something like 
+    The call definition of any given PRNG function should be as follows:
 
-PRNGfunc(seed, n). 
-The function should return a list of n generated numbers using the generation method
+    PRNGfunc(seed, n, optionalparam=default, anotherparam=default). 
 
-For example if I call PRNG(seed, 10)
-It might return something like
-[3,5,10,1,31,17,2,4,6,7]
+    The function should return a list of n generated numbers using the generation method and all other params outside of seed and n need to have default values.
 
-We will control parsing the n-length list and handling seeds externally. This plays logically with separation of concerns for our usecase.
+    For example if I call PRNG(seed, 10)
+    It might return something like
+    [3,5,10,1,31,17,2,4,6,7]
 
-NOTE: Please read SeedGenerator.py for notes about the seed generation method used.
+    We will control parsing the n-length list and handling seeds externally. This plays logically with separation of concerns for our usecase.
 
+    NOTE: Please read SeedGenerator.py for notes about the seed generation method used.
+</notes>
 '''
 
 import sys
 
 
 '''
-[Middle-square method (1946)](https://en.wikipedia.org/wiki/Middle-square_method)
-
-Weakness Note from link ...
-For a generator of n-digit numbers, the period can be no longer than 8n. If the middle n digits are all zeroes, the generator then outputs zeroes forever. If the first half of a number in the sequence is zeroes, the subsequent numbers will be decreasing to zero. While these runs of zero are easy to detect, they occur too frequently for this method to be of practical use. The middle-squared method can also get stuck on a number other than zero.
-
+<Middle_Square finished=true/>
+<notes>
+    Weakness Note:
+        For a generator of n-digit numbers, the period can be no longer than 8n. If the middle n digits are all zeroes, 
+        the generator then outputs zeroes forever. If the first half of a number in the sequence is zeroes, the subsequent
+        numbers will be decreasing to zero. While these runs of zero are easy to detect, they occur too frequently for this
+        method to be of practical use. The middle-squared method can also get stuck on a number other than zero.
+        
+    An already_seen list is NOT included in the original middle square method and will not be used.
+</notes>
 '''
-
-#note, an already_seen list is not included in the original middle square method and will not be used.
-
 def Middle_Square(seed, listlength):
     print("Middle_Square")
     numlist = []
@@ -61,7 +63,10 @@ def Middle_Square(seed, listlength):
         numlist.append(seed)
     #print(numlist)
     return(numlist)
-'''
+
+
+
+'''--------------------------------------LEHMER UNDER CONSTRUCTION--------------------------------
 Notes:
 If c = 0, the generator is often called a multiplicative congruential generator (MCG), or Lehmer RNG. If c ≠ 0, the method is called a mixed congruential generator.
 
@@ -106,55 +111,85 @@ def Lehmer():
     
     
     print("Lehmer")
+    --------------------------------------LEHMER UNDER CONSTRUCTION--------------------------------
     '''
     
+
+
+
 '''
-Notes:
-The generator is not sensitive to the choice of c, as long as it is relatively prime to the modulus (e.g. if m is a power of 2, then c must be odd), so the value c=1 is commonly chosen. 
+<Linear_Congruential finished=true/>
+<notes>
+    The generator is not sensitive to the choice of c, 
+    as long as it is relatively prime to the modulus 
+    (e.g. if m is a power of 2, then c must be odd), 
+    so the value c=1 is commonly chosen.
+    
 
-If c = 0, the generator is often called a multiplicative congruential generator (MCG), or Lehmer RNG. If c ≠ 0, the method is called a mixed congruential generator.
+    If c = 0, the generator is often called a multiplicative
+    congruential generator (MCG), or Lehmer RNG. If c ≠ 0, the
+    method is called a mixed congruential generator.
 
-Parameters were chosen based on 2^32 in table 2 of https://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=BBA0C7ED3ADAB606642BB8D939774B4F?doi=10.1.1.34.1024&rep=rep1&type=pdf
+    Parameters were chosen based on 2^32 in table 2 of 
+    https://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=BBA0C7ED3ADAB606642BB8D939774B4F?doi=10.1.1.34.1024&rep=rep1&type=pdf
+</notes>
 '''
 def Linear_Congruential(seed, listlength, modulus=4294967291, a=1588635695, c=1 ):
+    print("Linear_Congruential")
     numlist = []
     for i in range(listlength):
         seed = (a * seed + c) % modulus
         numlist.append(seed)
-    print("Linear_Congruential")
+    
+    
+    
+    
     
 '''
-This is two tap, not three tap...
-It's a "lagged" generator, because "j" and "k" lag behind the generated pseudorandom value. Also, this is called a "two-tap" generator, in that you are using 2 values in the sequence to generate the pseudorandom number. However, a two-tap generator has some problems with randomness tests, such as the Birthday Spacings. Apparently, creating a "three-tap" generator addresses this problem.
+<Lagged_Fibonacci finished=true/>
+<notes>
+    This is two tap, not three tap...
+    It's a "lagged" generator, because "j" and "k" lag behind the generated pseudorandom value. 
+    Also, this is called a "two-tap" generator, in that you are using 2 values in the sequence 
+    to generate the pseudorandom number. However, a two-tap generator has some problems with 
+    randomness tests, such as the Birthday Spacings. Apparently, creating a "three-tap" generator
+    addresses this problem.
+</notes>
 '''    
 def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
-    if(!(0 < j and j < k)):
+    print("Lagged_Fibonacci")
+    #litte dirty and expensive with validation checks
+    #validation checks
+    # 0 < j < k && k has to be greater than seed length.
+    if(not(0 < j and j < k) or len(str(seed)) < k ):
         return
+    
     #If addition is used, it is required that at least one of the first k values chosen to initialise the generator be odd;
     print("Lagged_Fibonacci")
-    if(len(str(seed)) < k):
-        return;
     
     flag = False
     for i in range(k):
         if(int(str(seed)[i]) % 2 != 0):
             flag = True
-            break;
-            
+            break
+    
+    #implementation  
     numlist = []
-            
+    seedlist = []
+    
+    for i in range(len(str(seed))):
+        seedlist.append(str(seed)[i])
+        
     if(flag):
-        for n in xrange(10):
-            for i in xrange(len(s)):
+        for n in range(listlength):
+            for i in range(len(seedlist)):
                 if i is 0:
-                    out = (s[j-1] + s[k-1]) % 10 # the pseudorandom output
-                elif 0 < i < 6:
-                    s[i] = s[i+1] # shift the array
+                    val = int(seedlist[j-1]) + int(seedlist[k-1]) % 10 #arbitrary mod?
+                    numlist.append(out)
+                elif 0 < i < len(seedlist) - 1:
+                    seedlist[i] = seedlist[i+1] # shift array
                 else:
-                    s[i] = out
-                    print s[i], # print the result
-            
-       
+                    seedlist[i] = val
     return numlist
     
     
