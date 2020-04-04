@@ -199,10 +199,26 @@ def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
     each of which is used to produce a uniformly distributed number between 0 and 1.
     These are summed, modulo 1, to produce the result.
 
+    This function is a direct derivative of the original AS 183 generator by Wichmann and Hill.
+    
+    Here is a great article... https://jamesmccaffrey.wordpress.com/2016/05/14/the-wichmann-hill-random-number-algorithm/
+    
+    Major current issues!!!
+        seed1, seed2, seed3 should be random from 1 to 30,000?
+        From experimental design, will we generate three seeds or divide one seed?
 </notes>
 '''
-def Wichmann_Hill():
+def Wichmann_Hill(seed1, seed2, seed3, listlength):
     print("Wichmann_Hill")
+    numlist = []
+    for i in range(listlength):
+       
+        seed1 = 171 * seed1 % 30269
+        seed2 = 172 * seed2 % 30307
+        seed3 = 170 * seed3 % 30323
+
+        numlist.append(seed1/30269.0 + seed2/30307.0 + seed3/30323.0 % 1.0)
+    return numlist
     
     
 '''
