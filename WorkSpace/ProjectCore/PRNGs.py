@@ -294,6 +294,32 @@ def Maximally_Periodic_Reciprocals(p, listlength, decprec=100):
 
 
 
+'''
+<Linear_Feedback_Shift_Register finished=false/>
+<notes>
+    should be interesting how this goes against the XOR problem in neural nets.
+</notes>
+
+
+'''
+def Linear_Feedback_Shift_Register():
+    
+    
+
+
+
+
+
+'''
+<Mersenne_Twister/>
+<notes>
+    Closely related with LFSRs. In its MT19937 implementation is probably the most commonly used modern PRNG. 
+    Default generator in the Python language starting from version 2.3. 
+    
+    HERE IS A NICE PYTHON IMPLEMENTATION
+    https://github.com/yinengy/Mersenne-Twister-in-Python/blob/master/MT19937.py
+</notes>
+'''
 def Mersenne_Twister():
     print("Mersenne_Twister")
     
@@ -368,5 +394,46 @@ def Park_Miller():
     
     
 
+    
+    
+    
 
 
+'''
+<Rule30 finished=false/>
+<notes>
+    Cellular Automata
+    https://en.wikipedia.org/wiki/Rule_30
+</notes>
+'''    
+def eca_wrap(cells, rule):
+    lencells = len(cells)
+    rulebits = '{0:08b}'.format(rule)
+    neighbours2next = {tuple('{0:03b}'.format(n)):rulebits[::-1][n] for n in range(8)}
+    c = cells
+    while True:
+        yield c
+        c = ''.join(neighbours2next[(c[i-1], c[i], c[(i+1) % lencells])] for i in range(lencells))
+'''
+if __name__ == '__main__':
+    lines, start, rules = 50, '0000000001000000000', (90, 30, 122)
+    zipped = [range(lines)] + [eca_wrap(start, rule) for rule in rules]
+    print('\n   Rules: %r' % (rules,))
+    for data in zip(*zipped):
+        i = data[0]
+        cells = data[1:]
+        print('%2i: %s' % (i, '    '.join(cells).replace('0', '.').replace('1', '#')))
+        '''
+
+def Rule_30(listlength=100):
+    cells = '1' + '0' * (listlength - 1)
+    numlist = []
+    for i in range(listlength):
+        numlist.append(eca_wrap(cells, 30))
+    int(   ''.join(       next(gen)[0] for i in range(8)     ), 2           )
+    '''
+    gen = eca_wrap(cells, 30)
+    while True:
+        return int(''.join(next(gen)[0] for i in range(8)), 2)
+    '''
+    return numlist
