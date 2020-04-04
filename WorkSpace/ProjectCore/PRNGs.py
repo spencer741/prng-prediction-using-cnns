@@ -362,19 +362,14 @@ def Lehmer():
             self.seed += self.m
         return(self.seed * 1.0 / self.m)
         
-    import random
     hi = 10 
     lo = 0
-    a = 16807
-    q = 2147483647
-    m = 127773
-    r = 2836
-    lehmer = Lehmer(a,m,q,r)
-    lehmer.lehmerRNG(3)
-    for i in range(20):
+    lehmer = Lehmer(16807,2147483647,127773,2836)
+    lehmer.lehmerRNG(1)
+    for i in range(30):
         x = lehmer.Next()
         ri = (hi - lo) * x + lo
-        print(x)
+        print(ri)
     
     
     
