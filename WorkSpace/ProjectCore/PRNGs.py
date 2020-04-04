@@ -303,9 +303,8 @@ def Maximally_Periodic_Reciprocals(p, listlength, decprec=100):
 
 '''
 def Linear_Feedback_Shift_Register():
+    print("Linear_Feedback_Shift_Register")
     
-    
-
 
 
 
@@ -322,8 +321,7 @@ def Linear_Feedback_Shift_Register():
 '''
 def Mersenne_Twister():
     print("Mersenne_Twister")
-    
-    
+        
     
     
     
