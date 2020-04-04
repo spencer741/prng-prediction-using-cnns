@@ -313,26 +313,21 @@ def Mersenne_Twister(seed, listlength):
         
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-'''--------------------------------------LEHMER and Park Miller UNDER CONSTRUCTION--------------------------------
-Notes:
-If c = 0, the generator is often called a multiplicative congruential generator (MCG), or Lehmer RNG. If c ≠ 0, the method is called a mixed congruential generator.
-
-
-While the Lehmer RNG can be viewed as a particular case of the linear congruential generator with c=0, it is a special case that implies certain restrictions and properties. In particular, for the Lehmer RNG, the initial seed must be coprime to the modulus m that is not required for LCGs in general. The choice of the modulus m and the multiplier a is also more restrictive for the Lehmer RNG. In contrast to LCG, the maximum period of the Lehmer RNG equals m−1 and it is such when m is prime and a is a primitive root modulo m. 
-
-'''    
 '''
+<Lehmer finished=false/>
+<notes>
+
+    If c = 0, the generator is often called a multiplicative congruential generator (MCG), or Lehmer RNG. If c ≠ 0, the method is called a mixed congruential generator.
+
+
+    While the Lehmer RNG can be viewed as a particular case of the linear congruential generator with c=0, it is a special case that implies certain restrictions and properties.
+    In particular, for the Lehmer RNG, the initial seed must be coprime to the modulus m that is not required for LCGs in general. The choice of the modulus m and the multiplier 
+    a is also more restrictive for the Lehmer RNG. In contrast to LCG, the maximum period of the Lehmer RNG equals m−1 and it is such when m is prime and a is a primitive root modulo m. 
+    
+</notes>
+'''    
 def Lehmer():
+    '''
     class Lehmer:
     def __init__(self,a,m,q,r):
         self.a = a
@@ -363,16 +358,8 @@ def Lehmer():
     
     
     print("Lehmer")
-    --------------------------------------LEHMER UNDER CONSTRUCTION--------------------------------
     '''
 
-
-'''
-A specific implementation of a Lehmer generator, widely used because built-in in the C and C++ languages as the function `minstd'. 
-
-def Park_Miller():
-    print("Park_Miller")
-''' 
     
     
 
