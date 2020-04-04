@@ -225,6 +225,14 @@ def Wichmann_Hill(seed1, seed2, seed3, listlength):
     listlength > decprec
     
     Note that this will not accurately return the list length requested. It will return listlength - 2
+    
+    
+    If p is a Sophie Germain prime greater than 3, then p must be congruent to 2 mod 3. 
+    For, if not, it would be congruent to 1 mod 3 and 2p + 1 would be congruent to 3 mod 3,
+    impossible for a prime number....
+    ... We are taking a brute force approach and just checking if the alleged safe prime is indeed prime, instead of 
+    checking modulo restrictions to short circuit the operation. This is less efficient, but it is OK for now to brute force it.
+    
 </notes>
 
 '''
