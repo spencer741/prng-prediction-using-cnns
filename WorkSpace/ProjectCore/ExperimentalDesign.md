@@ -48,7 +48,104 @@ This method will allow enough spread between occaisonally retreived ticks, where
 
 
 ### **PRNG implementations:**
+Pull notes from .py file and elaborate on how each PRNG plays into experimental design.
 
+#### **Middle_Square**
+
+<notes>
+    
+    A note on weakness: For a generator of n-digit numbers, the period can be no longer than 8n. If the middle n digits are all zeroes, 
+    the generator then outputs zeroes forever. If the first half of a number in the sequence is zeroes, the subsequent
+    numbers will be decreasing to zero. While these runs of zero are easy to detect, they occur too frequently for this
+    method to be of practical use. The middle-squared method can also get stuck on a number other than zero.
+
+    An already_seen list is NOT included in the original middle square method and will not be used.
+</notes>
+
+
+#### **Linear_Congruential**
+
+<notes>
+    
+    The generator is not sensitive to the choice of c, 
+    as long as it is relatively prime to the modulus 
+    (e.g. if m is a power of 2, then c must be odd), 
+    so the value c=1 is commonly chosen.
+    
+
+    If c = 0, the generator is often called a multiplicative
+    congruential generator (MCG), or Lehmer RNG. If c ≠ 0, the
+    method is called a mixed congruential generator.
+
+    Parameters were chosen based on 2^32 in table 2 of 
+    https://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=BBA0C7ED3ADAB606642BB8D939774B4F?doi=10.1.1.34.1024&rep=rep1&type=pdf
+</notes>
+
+
+#### **Lagged_Fibonacci**
+
+<notes>
+    
+    This is two tap, not three tap...
+    It's a "lagged" generator, because "j" and "k" lag behind the generated pseudorandom value. 
+    Also, this is called a "two-tap" generator, in that you are using 2 values in the sequence 
+    to generate the pseudorandom number. However, a two-tap generator has some problems with 
+    randomness tests, such as the Birthday Spacings. Apparently, creating a "three-tap" generator
+    addresses this problem.
+</notes>
+
+
+#### **Wichmann_Hill**
+
+<notes>
+    
+    Consists of three linear congruential generators with different prime moduli, 
+    each of which is used to produce a uniformly distributed number between 0 and 1.
+    These are summed, modulo 1, to produce the result.
+
+    This function is a direct derivative of the original AS 183 generator by Wichmann and Hill.
+    
+    Here is a great article... https://jamesmccaffrey.wordpress.com/2016/05/14/the-wichmann-hill-random-number-algorithm/
+    
+    Previous issue:
+        seed1, seed2, seed3 should be random from 1 to 30,000? -> answer from Wichmann Hill Fortran Code 
+        INTEGER ARITHMETIC UP TO 30323 IS REQUIRED
+        ... so I am assuming it can be over 30,000.
+</notes>
+
+
+#### **Maximally_Periodic_Reciprocals** mneumonic="Sophie German Prime" 
+
+<notes>
+    
+    Sophie Germain primes may be used in the generation of pseudo-random numbers.
+    The decimal expansion of 1/q will produce a stream of q − 1 pseudo-random digits,
+    if q is the safe prime of a Sophie Germain prime p, with p congruent to 3, 9, or 11 (mod 20).
+    Thus "suitable" prime numbers q are 7, 23, 47, 59, 167, 179, etc. (OEIS: A000353) 
+    (corresponding to p =  3, 11, 23, 29, 83, 89, etc.) (OEIS: A000355). 
+    The result is a stream of length q − 1 digits (including leading zeros). 
+    So, for example, using q = 23 generates the pseudo-random digits 0, 4, 3, 4, 7, 8, 2, 6, 0, 8, 6, 9, 5, 6, 5, 2, 1, 7, 3, 9, 1, 3.
+    Note that these digits are not appropriate for cryptographic purposes, as the value of each can be derived from its predecessor in 
+    the digit-stream. 
+    
+    This only works when you input a prime number that
+    a. is a sophie prime.(if p is prime and 2*p + 1 is also a prime, p is a sophie prime)
+    b. listlength >= safeprime
+    
+    --and--
+    
+    listlength > decprec
+    
+    Note that this will not accurately return the list length requested. It will return listlength - 2
+    
+    
+    If p is a Sophie Germain prime greater than 3, then p must be congruent to 2 mod 3. 
+    For, if not, it would be congruent to 1 mod 3 and 2p + 1 would be congruent to 3 mod 3,
+    impossible for a prime number....
+    ... We are taking a brute force approach and just checking if the alleged safe prime is indeed prime, instead of 
+    checking modulo restrictions to short circuit the operation. This is less efficient, but it is OK for now to brute force it.
+    
+</notes>
 
 ### **Predictive Network Setup:**
 
