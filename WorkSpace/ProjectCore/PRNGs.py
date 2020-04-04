@@ -38,6 +38,8 @@
 import sys
 from decimal import *
 from IsPrime import *
+import numpy as np # For Merseene Twister
+from numpy.random import Generator, MT19937, SeedSequence # For Merseene Twister
 
 
 
@@ -319,7 +321,10 @@ def Linear_Feedback_Shift_Register():
     https://github.com/yinengy/Mersenne-Twister-in-Python/blob/master/MT19937.py
 </notes>
 '''
-def Mersenne_Twister():
+def Mersenne_Twister(s, seed):
+    np.random.seed(seed)
+    # numpy uses Mersenne Twister Algorithm
+    return np.random.RandomState().randint(0,10,size=s)
     print("Mersenne_Twister")
         
     
