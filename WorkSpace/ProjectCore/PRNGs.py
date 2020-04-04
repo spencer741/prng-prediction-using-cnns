@@ -172,7 +172,7 @@ def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
 
 
 '''
-<Wichmann_Hill finished=false/>
+<Wichmann_Hill finished=true/>
 <notes>
     Consists of three linear congruential generators with different prime moduli, 
     each of which is used to produce a uniformly distributed number between 0 and 1.
@@ -182,9 +182,10 @@ def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
     
     Here is a great article... https://jamesmccaffrey.wordpress.com/2016/05/14/the-wichmann-hill-random-number-algorithm/
     
-    Major current issues!!!
-        seed1, seed2, seed3 should be random from 1 to 30,000?
-        From experimental design, will we generate three seeds or divide one seed?
+    Previous issue:
+        seed1, seed2, seed3 should be random from 1 to 30,000? -> answer from Wichmann Hill Fortran Code 
+        INTEGER ARITHMETIC UP TO 30323 IS REQUIRED
+        ... so I am assuming it can be over 30,000.
 </notes>
 '''
 def Wichmann_Hill(seed1, seed2, seed3, listlength):
@@ -196,14 +197,14 @@ def Wichmann_Hill(seed1, seed2, seed3, listlength):
         seed2 = 172 * seed2 % 30307
         seed3 = 170 * seed3 % 30323
 
-        numlist.append(seed1/30269.0 + seed2/30307.0 + seed3/30323.0 % 1.0)
+        numlist.append((float(seed1)/30269.0 + float(seed2)/30307.0 + float(seed3)/30323.0) % 1.0)
     return numlist
     
     
 
 
 '''
-<Maximally_Periodic_Reciprocals mneumonic="Sophie German Prime" finished=false/> 
+<Maximally_Periodic_Reciprocals mneumonic="Sophie German Prime" finished=true/> 
 <notes>
     Sophie Germain primes may be used in the generation of pseudo-random numbers.
     The decimal expansion of 1/q will produce a stream of q − 1 pseudo-random digits,
