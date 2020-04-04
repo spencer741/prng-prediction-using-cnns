@@ -3,13 +3,13 @@
     Listed below are the PRNG implementations we want to focus on (this covers most of them from 1946-1998); however, 
     we need to implement as many in this list as possible: https://en.wikipedia.org/wiki/List_of_random_number_generators
 
-        [Middle-square method (1946)](https://en.wikipedia.org/wiki/Middle-square_method)
+      Done  [Middle-square method (1946)](https://en.wikipedia.org/wiki/Middle-square_method)
         [Lehmer generator (1951)](https://en.wikipedia.org/wiki/Lehmer_random_number_generator)
-        [Linear congruential generator (1958)](https://en.wikipedia.org/wiki/Linear_congruential_generator)
-        [Lagged Fibonacci (1965)](https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator)
-        [Wichmann-Hill generator (1982)](https://en.wikipedia.org/wiki/Wichmann%E2%80%93Hill)
+      Done  [Linear congruential generator (1958)](https://en.wikipedia.org/wiki/Linear_congruential_generator)
+      Done  [Lagged Fibonacci (1965)](https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator)
+      Done  [Wichmann-Hill generator (1982)](https://en.wikipedia.org/wiki/Wichmann%E2%80%93Hill)
         [Park-Miller generator (1988)](https://en.wikipedia.org/wiki/Lehmer_random_number_generator)
-        [Maximally periodic reciprocals (1992)](https://en.wikipedia.org/wiki/Sophie_Germain_prime)
+      Done  [Maximally periodic reciprocals (1992)](https://en.wikipedia.org/wiki/Sophie_Germain_prime)
         [Mersenne Twister (1998)](https://en.wikipedia.org/wiki/Mersenne_Twister)
 
     The call definition of any given PRNG function should be as follows:
@@ -28,7 +28,22 @@
 </notes>
 '''
 
+
+
+
+
+
+
+
 import sys
+from decimal import *
+from IsPrime import *
+
+
+
+
+
+
 
 
 '''
@@ -66,54 +81,8 @@ def Middle_Square(seed, listlength):
 
 
 
-'''--------------------------------------LEHMER UNDER CONSTRUCTION--------------------------------
-Notes:
-If c = 0, the generator is often called a multiplicative congruential generator (MCG), or Lehmer RNG. If c ≠ 0, the method is called a mixed congruential generator.
 
 
-While the Lehmer RNG can be viewed as a particular case of the linear congruential generator with c=0, it is a special case that implies certain restrictions and properties. In particular, for the Lehmer RNG, the initial seed must be coprime to the modulus m that is not required for LCGs in general. The choice of the modulus m and the multiplier a is also more restrictive for the Lehmer RNG. In contrast to LCG, the maximum period of the Lehmer RNG equals m−1 and it is such when m is prime and a is a primitive root modulo m. 
-
-'''    
-'''
-def Lehmer():
-    class Lehmer:
-    def __init__(self,a,m,q,r):
-        self.a = a
-        self.m = m
-        self.q = q
-        self.r = r
-        self.seed = 0
-    def lehmerRNG(self,seed):
-        if(seed <= 0):
-            self.seed = seed
-    def Next(self):
-        hi = self.seed / self.q
-        lo = self.seed % self.q
-        self.seed = (self.a * lo) - (self.r- hi)
-        if(self.seed <= 0):
-            self.seed += self.m
-        return(self.seed * 1.0 / self.m)
-        
-    import random
-    hi = 10 
-    lo = 0
-    a = 16807
-    q = 2147483647
-    m = 127773
-    r = 2836
-    lehmer = Lehmer(a,m,q,r)
-    lehmer.lehmerRNG(3)
-    for i in range(20):
-        x = lehmer.Next()
-        ri = (hi - lo) * x + lo
-        print(x)
-    
-    
-    
-    print("Lehmer")
-    --------------------------------------LEHMER UNDER CONSTRUCTION--------------------------------
-    '''
-    
 
 
 
@@ -140,11 +109,14 @@ def Linear_Congruential(seed, listlength, modulus=4294967291, a=1588635695, c=1 
     for i in range(listlength):
         seed = (a * seed + c) % modulus
         numlist.append(seed)
-    
-    
-    
-    
-    
+        
+        
+        
+        
+        
+        
+        
+        
 '''
 <Lagged_Fibonacci finished=true/>
 <notes>
@@ -191,7 +163,14 @@ def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
                 else:
                     seedlist[i] = val
     return numlist
-    
+
+
+
+
+
+
+
+
 '''
 <Wichmann_Hill finished=false/>
 <notes>
@@ -221,19 +200,162 @@ def Wichmann_Hill(seed1, seed2, seed3, listlength):
     return numlist
     
     
+
+
+'''
+<Maximally_Periodic_Reciprocals mneumonic="Sophie German Prime" finished=false/> 
+<notes>
+    Sophie Germain primes may be used in the generation of pseudo-random numbers.
+    The decimal expansion of 1/q will produce a stream of q − 1 pseudo-random digits,
+    if q is the safe prime of a Sophie Germain prime p, with p congruent to 3, 9, or 11 (mod 20).
+    Thus "suitable" prime numbers q are 7, 23, 47, 59, 167, 179, etc. (OEIS: A000353) 
+    (corresponding to p =  3, 11, 23, 29, 83, 89, etc.) (OEIS: A000355). 
+    The result is a stream of length q − 1 digits (including leading zeros). 
+    So, for example, using q = 23 generates the pseudo-random digits 0, 4, 3, 4, 7, 8, 2, 6, 0, 8, 6, 9, 5, 6, 5, 2, 1, 7, 3, 9, 1, 3.
+    Note that these digits are not appropriate for cryptographic purposes, as the value of each can be derived from its predecessor in 
+    the digit-stream. 
+    
+    This only works when you input a prime number that
+    a. is a sophie prime.(if p is prime and 2*p + 1 is also a prime, p is a sophie prime)
+    b. listlength >= safeprime
+    
+    --and--
+    
+    listlength > decprec
+    
+    Note that this will not accurately return the list length requested. It will return listlength - 2
+</notes>
+
+'''
+def Maximally_Periodic_Reciprocals(p, listlength, decprec=100):
+    print("Maximally_Periodic_Reciprocals")
+    # In number theory, a prime number p is a Sophie Germain prime if 2p + 1 is also prime.
+    
+    #make whole
+    p = int(p)
+    
+    #prime check
+    if(not IsPrime(p)):
+        print("p is not prime")
+        return
+    
+    #sophie check 
+    safeprime = 2 * p + 1
+    if(not IsPrime(safeprime)):
+        print("p is prime, but isn't a sophie prime.")
+        return
+    
+    #listlength check
+    #1/q will produce q-1 pseudo random digits.
+    if(listlength >= safeprime):
+        print("p is a sophie prime, but your list length is greater than or equal to the # of digits of p's safe prime (q): ", 
+              str(safeprime),
+              "\n... Because 1/q will produce q-1 pseudo random digits.")
+        return
+    
+    #decprec check
+    if(listlength > decprec):
+        print("p is a sophie prime, but you are requesting a list longer than specified decimal precision.")
+        return 
+    
+    print("You have passed prime check, sophie check, safeprime_listlength check , and decprec_listlength check.")
+    
+    # p has been confirmed to be a sophie prime. var safeprime is now p's safe prime.
+    q = safeprime
+    
+    # if q is the safe prime of a Sophie Germain prime p, 1/q will produce q-1 pseudo random digits.
+    getcontext().prec = decprec
+    LotsOfPseudos = Decimal(1) / Decimal(q)
+    
+    #print("length",len(str(LotsOfPseudos)))
+    
+    numlist = []
+    
+    #note that this will not accurately return the list length requested. It will return list length - 2
+    for i in range(listlength):
+        if(i is not 0 and i is not 1):#str(LotsOfPseudos)[i] is not '.'):
+            numlist.append(str(LotsOfPseudos)[i])
+        
+    return numlist
+
+
+
+
+
+
+
+
+def Mersenne_Twister():
+    print("Mersenne_Twister")
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+'''--------------------------------------LEHMER and Park Miller UNDER CONSTRUCTION--------------------------------
+Notes:
+If c = 0, the generator is often called a multiplicative congruential generator (MCG), or Lehmer RNG. If c ≠ 0, the method is called a mixed congruential generator.
+
+
+While the Lehmer RNG can be viewed as a particular case of the linear congruential generator with c=0, it is a special case that implies certain restrictions and properties. In particular, for the Lehmer RNG, the initial seed must be coprime to the modulus m that is not required for LCGs in general. The choice of the modulus m and the multiplier a is also more restrictive for the Lehmer RNG. In contrast to LCG, the maximum period of the Lehmer RNG equals m−1 and it is such when m is prime and a is a primitive root modulo m. 
+
+'''    
+'''
+def Lehmer():
+    class Lehmer:
+    def __init__(self,a,m,q,r):
+        self.a = a
+        self.m = m
+        self.q = q
+        self.r = r
+        self.seed = 0
+    def lehmerRNG(self,seed):
+        if(seed <= 0):
+            self.seed = seed
+    def Next(self):
+        hi = self.seed / self.q
+        lo = self.seed % self.q
+        self.seed = (self.a * lo) - (self.r- hi)
+        if(self.seed <= 0):
+            self.seed += self.m
+        return(self.seed * 1.0 / self.m)
+        
+    import random
+    hi = 10 
+    lo = 0
+    a = 16807
+    q = 2147483647
+    m = 127773
+    r = 2836
+    lehmer = Lehmer(a,m,q,r)
+    lehmer.lehmerRNG(3)
+    for i in range(20):
+        x = lehmer.Next()
+        ri = (hi - lo) * x + lo
+        print(x)
+    
+    
+    
+    print("Lehmer")
+    --------------------------------------LEHMER UNDER CONSTRUCTION--------------------------------
+    '''
+
+
 '''
 A specific implementation of a Lehmer generator, widely used because built-in in the C and C++ languages as the function `minstd'. 
 
 def Park_Miller():
     print("Park_Miller")
 ''' 
-    
-def Maximally_Periodic_Reciprocals():
-    print("Maximally_Periodic_Reciprocals")
-    
-
-def Mersenne_Twister():
-    print("Mersenne_Twister")
     
     
 
