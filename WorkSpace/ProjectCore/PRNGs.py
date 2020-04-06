@@ -4,13 +4,12 @@
     we need to implement as many in this list as possible: https://en.wikipedia.org/wiki/List_of_random_number_generators
 
       Done  [Middle-square method (1946)](https://en.wikipedia.org/wiki/Middle-square_method)
-        [Lehmer generator (1951)](https://en.wikipedia.org/wiki/Lehmer_random_number_generator)
+      Done  [Lehmer generator / Park-Miller (1951)](https://en.wikipedia.org/wiki/Lehmer_random_number_generator)
       Done  [Linear congruential generator (1958)](https://en.wikipedia.org/wiki/Linear_congruential_generator)
       Done  [Lagged Fibonacci (1965)](https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator)
       Done  [Wichmann-Hill generator (1982)](https://en.wikipedia.org/wiki/Wichmann%E2%80%93Hill)
-        [Park-Miller generator (1988)](https://en.wikipedia.org/wiki/Lehmer_random_number_generator)
       Done  [Maximally periodic reciprocals (1992)](https://en.wikipedia.org/wiki/Sophie_Germain_prime)
-        [Mersenne Twister (1998)](https://en.wikipedia.org/wiki/Mersenne_Twister)
+      Done  [Mersenne Twister (1998)](https://en.wikipedia.org/wiki/Mersenne_Twister)
 
     The call definition of any given PRNG function should be as follows:
 
@@ -314,11 +313,16 @@ def Mersenne_Twister(seed, listlength):
     
     
 '''
-<Lehmer finished=false/>
+<Park-Miller finished=true/>
 <notes>
 
+    The Lehmer generator is an lcg. Park Miller is a specific lcg.
+    
+    The Lehmer random number generator (named after D. H. Lehmer), sometimes also referred to as the Park–Miller random number generator
+    (after Stephen K. Park and Keith W. Miller), is a type of linear congruential generator (LCG)
+    
+    Park miller generator, because they essentially the same. Park-miller request the use of certain modulos, so I am fine with that. Lehmer is an lcg where c = 0...
     If c = 0, the generator is often called a multiplicative congruential generator (MCG), or Lehmer RNG. If c ≠ 0, the method is called a mixed congruential generator.
-
 
     While the Lehmer RNG can be viewed as a particular case of the linear congruential generator with c=0, it is a special case that implies certain restrictions and properties.
     In particular, for the Lehmer RNG, the initial seed must be coprime to the modulus m that is not required for LCGs in general. The choice of the modulus m and the multiplier 
@@ -326,39 +330,20 @@ def Mersenne_Twister(seed, listlength):
     
 </notes>
 '''    
-def Lehmer():
-    '''
-    class Lehmer:
-    def __init__(self,a,m,q,r):
-        self.a = a
-        self.m = m
-        self.q = q
-        self.r = r
-        self.seed = 0
-    def lehmerRNG(self,seed):
-        if(seed <= 0):
-            self.seed = seed
-    def Next(self):
-        hi = self.seed / self.q
-        lo = self.seed % self.q
-        self.seed = (self.a * lo) - (self.r- hi)
-        if(self.seed <= 0):
-            self.seed += self.m
-        return(self.seed * 1.0 / self.m)
-        
-    hi = 10 
-    lo = 0
-    lehmer = Lehmer(16807,2147483647,127773,2836)
-    lehmer.lehmerRNG(1)
-    for i in range(30):
-        x = lehmer.Next()
-        ri = (hi - lo) * x + lo
-        print(ri)
+def Park_Miller(seed, listlength):
     
+    #initialize the state to any number greater than zero and less than the modulus.                        
+    if(not(seed > 0 and seed < 2147483647)):
+        print("Seed needs to be any number greater than zero and less than the modulus.")
+        return
     
-    
-    print("Lehmer")
-    '''
+    numlist = []
+    for i in range(listlength):
+        seed = seed * 48271 % 2147483647 # hex = 0x7fffffff;
+        numlist.append(seed)
+
+    return numlist
+
 
     
     
