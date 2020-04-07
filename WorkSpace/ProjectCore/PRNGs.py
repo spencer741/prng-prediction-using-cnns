@@ -60,7 +60,6 @@ from numpy.random import Generator, MT19937, SeedSequence # For Merseene Twister
 </notes>
 '''
 def Middle_Square(seed, listlength):
-    print("Middle_Square")
     numlist = []
     for i in range(listlength):
         seedlength = len(str(seed))
@@ -105,7 +104,6 @@ def Middle_Square(seed, listlength):
 </notes>
 '''
 def Linear_Congruential(seed, listlength, modulus=4294967291, a=1588635695, c=1 ):
-    print("Linear_Congruential")
     numlist = []
     for i in range(listlength):
         seed = (a * seed + c) % modulus
@@ -130,7 +128,6 @@ def Linear_Congruential(seed, listlength, modulus=4294967291, a=1588635695, c=1 
 </notes>
 '''    
 def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
-    print("Lagged_Fibonacci")
     #litte dirty and expensive with validation checks
     #validation checks
     # 0 < j < k && k has to be greater than seed length.
@@ -138,7 +135,6 @@ def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
         return
     
     #If addition is used, it is required that at least one of the first k values chosen to initialise the generator be odd;
-    print("Lagged_Fibonacci")
     
     flag = False
     for i in range(k):
@@ -190,7 +186,6 @@ def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
 </notes>
 '''
 def Wichmann_Hill(seed1, seed2, seed3, listlength):
-    print("Wichmann_Hill")
     numlist = []
     for i in range(listlength):
        
@@ -238,7 +233,6 @@ def Wichmann_Hill(seed1, seed2, seed3, listlength):
 
 '''
 def Maximally_Periodic_Reciprocals(p, listlength, decprec=100):
-    print("Maximally_Periodic_Reciprocals")
     # In number theory, a prime number p is a Sophie Germain prime if 2p + 1 is also prime.
     
     #make whole
@@ -300,7 +294,6 @@ def Maximally_Periodic_Reciprocals(p, listlength, decprec=100):
 </notes>
 '''
 def Mersenne_Twister(seed, listlength):
-    print("Mersenne_Twister")
     numlist = []
     np.random.seed(seed)
     # numpy uses Mersenne Twister Algorithm
@@ -331,7 +324,6 @@ def Mersenne_Twister(seed, listlength):
 </notes>
 '''    
 def Park_Miller(seed, listlength):
-    
     #initialize the state to any number greater than zero and less than the modulus.                        
     if(not(seed > 0 and seed < 2147483647)):
         print("Seed needs to be any number greater than zero and less than the modulus.")
