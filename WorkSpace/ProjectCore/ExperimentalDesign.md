@@ -1,7 +1,5 @@
 ## **Observation:**
-Society relies on Pseudo-random numbers for a multitude of reasons. Whether the usecases fall in Information Security or, more broadly, modeling and simulation, we shall not highlight their importance in computing.
-
-We think it is important to not only push the boundary for the modern pseudo random number directly, but to also analyze the history of pseudo randomness to aide in that effort.
+Society relies on Pseudo-random numbers for a multitude of reasons. Whether the usecases fall in Information Security or, more broadly, modeling and simulation, we think it is important to not only push the boundary for the modern pseudo random number directly, but to also analyze the history of pseudo randomness to aide in that effort.
 
 Whether true randomness is a inhibition of the human perception or not, there is clear need to push the modern pseudo-random number closer to converging on perceived "true" randomness.
 
