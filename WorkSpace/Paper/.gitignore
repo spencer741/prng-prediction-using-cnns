@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!Paper.ipynb
+!References.ipynb
+!process.bash
+!Paper.pdf
+!*.png
+!*.jpg
+# etc...
