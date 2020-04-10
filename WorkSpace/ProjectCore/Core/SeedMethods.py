@@ -10,8 +10,9 @@ A single tick represents one hundred nanoseconds or one ten-millionth of a secon
 
 from datetime import *
 
-def ticks():
-    return (datetime.utcnow() - datetime(1, 1, 1)).total_seconds() * 10000000
+def ticks(t):
+    return (datetime.utcnow() - datetime(1970, 1, 1)).total_seconds()
+
 
 
     

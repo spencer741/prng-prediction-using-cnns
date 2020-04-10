@@ -36,7 +36,7 @@
 
 import sys
 from decimal import *
-from IsPrime import *
+from Core.IsPrime import *
 import numpy as np # For Merseene Twister
 from numpy.random import Generator, MT19937, SeedSequence # For Merseene Twister
 
