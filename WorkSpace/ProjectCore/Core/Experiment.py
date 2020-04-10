@@ -76,8 +76,8 @@ class Experiment:
 
         y_pred = y_pred.flatten()
 
-        #print(y_actual)
-        #print(y_pred)
+        print(y_actual)
+        print(y_pred)
         print(y_actual.shape)
         print(y_pred.shape)
 

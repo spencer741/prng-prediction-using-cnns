@@ -14,15 +14,15 @@ class PredictiveModel:
     # output_width: the size of the output layer
     def CreateModel(self, input_width : int, output_width : int):
         model = keras.Sequential()
-        model.add(keras.layers.Conv1D(3, 3,
+        model.add(keras.layers.Conv1D(4, 2,
                                     activation='relu',
                                     input_shape=(input_width, 1),
                                     name='conv_1'
                                  )
              )
         model.add(keras.layers.Conv1D(4, 2, activation='relu', name='conv_2'))
-        model.add(keras.layers.Conv1D(20, 10, activation='relu', name='conv_3'))
-        model.add(keras.layers.Conv1D(50, 5, activation='relu', name='conv_4'))
+        model.add(keras.layers.Conv1D(4, 2, activation='relu', name='conv_3'))
+        model.add(keras.layers.Conv1D(4, 2, activation='relu', name='conv_4'))
         model.add(keras.layers.MaxPool1D(1, 1, name='maxpool_1'))
         model.add(keras.layers.Dropout(0.25))
         model.add(keras.layers.Flatten(name='flatten_1'))
