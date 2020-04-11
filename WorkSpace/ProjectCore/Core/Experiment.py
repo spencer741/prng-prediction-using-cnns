@@ -106,7 +106,7 @@ class Experiment:
                                   self.db.y_train,
                                   self.config['BATCH_SIZE'],
                                   self.config['NUM_EPOCHS'],
-                                  1)
+                                  self.config['VERBOSE'])
         
         
         y_pred = self.pred.Predict(self.db.x_test, self.db.y_test)
