@@ -44,7 +44,16 @@ from numpy.random import Generator, MT19937, SeedSequence # For Merseene Twister
 
 
 
-
+def Get_Defs():
+    return {
+        'Middle_Square': '1946',
+        'Linear_Congruential':'1958',
+        'Lagged_Fibonacci' : '1958',
+        'Wichmann_Hill' : '1982',
+        'Park_Miller' : '1988',
+        'Maximally_Periodic_Reciprocals':'1992',
+        'Mersenne_Twister':'1998'   
+        }
 
 
 '''
