@@ -11,7 +11,7 @@ A single tick represents one hundred nanoseconds or one ten-millionth of a secon
 from datetime import *
 
 def ticks(t):
-    return  str( int( (datetime.utcnow() - datetime(1, 1, 1)).total_seconds() * 10000000 ))[-6:]
+    return int( str( int( (datetime.utcnow() - datetime(1, 1, 1)).total_seconds() * 10000000 ))[-6:])
     #return (datetime.utcnow() - datetime(1970, 1, 1)).total_seconds()
 
 

@@ -108,6 +108,8 @@ def Linear_Congruential(seed, listlength, modulus=4294967291, a=1588635695, c=1 
     for i in range(listlength):
         seed = (a * seed + c) % modulus
         numlist.append(seed)
+    #print(seed)
+    return numlist
         
         
         
