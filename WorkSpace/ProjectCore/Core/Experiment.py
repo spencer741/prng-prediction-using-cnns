@@ -142,18 +142,51 @@ class Experiment:
                                   validation_split=self.config['VALIDATION_SPLIT']
                                   )
         
-        ### if(loud_logging):? we can display graph for now.
-        ### not currently implementing a custom visualization library.
+        print(history.history.keys())
+        
+        
+        ### summarize history for loss ###
+        
+        # Note: if monitoring two metrics that are the same for checkpointing and training, you only need to display 'loss', which keras returns by default. 
+        # Otherwise if you want to see the metric associated with checkpoint monitor loss, you need to add that to the graph. Also note thatit might be advisable 
+        # to create two graphs for the latter, because different loss functions interpret loss differently, possibly not allowing you to see scaled plots correctly. 
+        # you will have to add those accordingly. See print(history.history.keys())
+        plt.plot(history.history['loss'], label = 'loss')
+        plt.plot(history.history['val_loss'], label = 'validation_loss')
+        plt.legend()
+        #plt.plot(history.history['mae'])
+        #plt.plot(history.history['val_mae'])
+        plt.title('Loss Plot From Training\n')
+        plt.ylabel('loss')
+        plt.xlabel('epoch')
+        #plt.legend(['loss', 'validation_loss',], loc='upper left') #'train_mae', 'test_mae'
+          
+        i = 0
+        while True:
+            i += 1
+            newname = '{}{:d}.png'.format('Train_LossPlot', i)
+            if os.path.exists(newname):
+                continue
+            plt.savefig(self.path + newname)
+            break
+        
+        plt.show()
+        
+        
+                  
+        ### summarize prediction data for regression analysis ###
+                  
         y_pred = self.pred.Predict(self.db.x_test, self.db.y_test)
         y_actual = self.db.y_test
 
         plt.plot(y_actual, color = 'red', label = 'Target Data')
         plt.plot(y_pred, color = 'blue', label = 'Predicted Data')
-        
         plt.legend()
+        plt.title('Correlation Plot From Testing\n')
+        plt.ylabel('Correlation')
+        plt.xlabel('Sequential Prediction Index (from 0 to Num_SETs - 1)')
         
-
-        y_pred = y_pred.flatten()
+        y_pred = y_pred.flatten() #flatten y_pred to for PCC calculation to include in title
 
         #print(y_actual)
         #print(y_pred)
@@ -166,11 +199,10 @@ class Experiment:
         
         plt.title('Prediction\n' + "Pearson Correlation Coefficient: "+ str(pearsoncorr[0]) +"\n2-tailed p-value: " + str(pearsoncorr[1]) )
         
-        
         i = 0
         while True:
             i += 1
-            newname = '{}{:d}.png'.format('RegPlot', i)
+            newname = '{}{:d}.png'.format('Test_RegressionPlot', i)
             if os.path.exists(newname):
                 continue
             plt.savefig(self.path + newname)
@@ -178,7 +210,6 @@ class Experiment:
         
         plt.show()
         
-        
-        
+    
         print('**********',self.config['PRNG_METHOD'],'finished**********')
         

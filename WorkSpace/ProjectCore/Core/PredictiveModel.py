@@ -30,6 +30,11 @@ from keras.callbacks import CSVLogger
 from keras.callbacks import ModelCheckpoint
 from keras import metrics
 
+from IPython.display import SVG, HTML
+from IPython.display import display
+
+from keras_tqdm import TQDMNotebookCallback
+
 import numpy as np
 from scipy.stats.stats import pearsonr 
 
@@ -106,6 +111,22 @@ class PredictiveModel:
               validation_split=0.0,
               validation_data=0
              ):
+        
+        
+        # Hack to fix TQDM extra lines issue...
+        # Reference: https://github.com/bstriner/keras-tqdm/issues/21
+        from keras_tqdm import TQDMNotebookCallback
+        display(HTML("""
+            <style>
+                .p-Widget.jp-OutputPrompt.jp-OutputArea-prompt:empty {
+                      padding: 0;
+                      border: 0;
+                }
+            </style>
+        """))
+        
+        
+        
         if(save_path == None):
             save_path = self.path
             
@@ -124,7 +145,7 @@ class PredictiveModel:
         if(use_validation):
             print('using validation split')
             #validation_data=validation_data is split between x and y
-            history = self.model.fit(x_train,y_train,batch_size=batch_size,epochs=epochs,validation_split=validation_split,verbose=verbose, callbacks=[csv_logger,checkpoint])
+            history = self.model.fit(x_train,y_train,batch_size=batch_size,epochs=epochs,validation_split=validation_split,verbose=verbose, callbacks=[csv_logger,checkpoint, TQDMNotebookCallback()])
         else:
             print('no validation split')
             history = self.model.fit(x_train,y_train,batch_size=batch_size,epochs=epochs,verbose=verbose, callbacks=[csv_logger,checkpoint])

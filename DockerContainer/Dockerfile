@@ -25,6 +25,7 @@ RUN apt-get update && \
 USER $NB_UID
 
 RUN pip install --quiet \
+    keras-tqdm \
     keras \
     tensorflow \
     torch \
