@@ -1,8 +1,22 @@
+'''
+#### BRIEF OVERVIEW ####
+This class is responsible for generating specified data, creating training and testing sets, normalizing data, and shaping data. 
+
+#### INSTANTIATION ####
+Requires instantiation
+
+#### HAVE ISSUES? ####
+We have worked hard to reduce obvious bugs, but if you coerce the class behavior into an unknown or bug-prone state,
+please open an issue and we will handle it accordingly.
+
+'''
+
+
+
 # custom tooling for seeding and PRNG
 import Core.PrngMethods
 import Core.SeedMethods 
 
-# fancy arrays
 import numpy as np
 
 # for data normalization
