@@ -12,8 +12,17 @@
 
 
 ### How to run the demo 
+**Option 1:** The Demo Image (Reduced Docker Image with only the dependencies). Recommended to run the Demo.
 
-**Option 1:** simple install (note: platform-specific tooling issues might occur)
+[Read tutorial here for setup](https://github.com/CSCI4850/S20-team7-project/tree/master/DemoImage) dependency to explore our notebooks!
+
+**Option 2:** The Contribution Image (Jupyter Lab on Docker). Recommended for contributors.
+
+[Read tutorial here for setup](https://github.com/CSCI4850/S20-team7-project/blob/master/DockerContainer/README.md)
+
+**Option 3:** 'simple' install 
+
+*Note*: platform-specific tooling issues might occur. With Windows, you will likely have to download the pre-compiled version of different packages (like SciPy and others) from here: [Windows Binaries](https://www.lfd.uci.edu/~gohlke/pythonlibs/). For Windows, we recommend the Docker Demo Image or the larger Contribution Image. [This](https://python-forum.io/Thread-sklearn-imported-but-not-recognized?pid=19812#pid19812) will get you started down the right path if you insist on this option.
 
 ```
 git clone https://github.com/CSCI4850/S20-team7-project.git
@@ -26,12 +35,6 @@ cd ./WorkSpace/ProjectCore/
 
 python3 main.py
 ```
-With this option, you can use the included [Jupyter Notebook](https://jupyter.readthedocs.io/en/latest/content-quickstart.html) dependency to explore our notebooks!
-
-**Option 2:** Jupyter Lab on Docker
-
-[Read the tutorial here for how to set this up](https://github.com/CSCI4850/S20-team7-project/blob/master/DockerContainer/README.md)
-
 
 ## Repository Structural Overview:
 Here is a trimmed down schema of our repository:
