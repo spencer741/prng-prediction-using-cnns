@@ -14,6 +14,7 @@ please open an issue and we will handle it accordingly.
 
 ## example usage ##    
 configuration = {
+        'DISABLE_TQDMN' : True,             #Shortened pretty output for epoch results. Disable if executing from cli.
         'LOUD_LOGGING': False,              #Extra output detailing exactly what the experiment is doing at all times.
         'VERBOSE' : 0,                      #if training output (model.fit) is verbose
         'IS_NEW_MODEL' : False,             #Whether to load a previous model or not... ->
@@ -84,13 +85,18 @@ class Experiment:
     #Description:
     #Executes experiment
     def perform(self):
-        print("\n**********PRNG_METHOD:",self.config['PRNG_METHOD'],"running**********")
+        print("\n**********",self.config['PRNG_METHOD'],"Experiment Initiated**********")
         
         self.performcount += 1
         loud_logging = self.config['LOUD_LOGGING']
         
+        
+        
         ### extra logging
         if(loud_logging):
+            
+            print("\nConfiguration settings accepted:", self.config)
+            
             print('\nGenerating',
                   self.config['NUM_SETS'],
                   'sets of',
@@ -139,10 +145,15 @@ class Experiment:
                                   monitor=self.config['CHKPNT_MONITOR'],
                                   mode=self.config['CHKPNT_MODE'],
                                   use_validation=self.config['USE_VALIDATION'],
-                                  validation_split=self.config['VALIDATION_SPLIT']
+                                  validation_split=self.config['VALIDATION_SPLIT'],
+                                  disable_TQDMN = self.config['DISABLE_TQDMN']
                                   )
         
-        print(history.history.keys())
+        
+        
+        if(loud_logging):
+            print("Training Finished!\n\nPrinting results...\n")
+            print("History Keys: ", history.history.keys())
         
         
         ### summarize history for loss ###
@@ -194,8 +205,6 @@ class Experiment:
         #print(y_pred.shape)
 
         pearsoncorr = pearsonr(y_actual,y_pred)
-        #print("Pearson Correlation Coefficient:", pearsoncorr[0])
-        #print("2-tailed p-value:                ", pearsoncorr[1])
         
         plt.title('Prediction\n' + "Pearson Correlation Coefficient: "+ str(pearsoncorr[0]) +"\n2-tailed p-value: " + str(pearsoncorr[1]) )
         
@@ -209,6 +218,11 @@ class Experiment:
             break
         
         plt.show()
+        
+        print("\nPearson Correlation Coefficient:", pearsoncorr[0])
+        print("2-tailed p-value:                ", pearsoncorr[1] , '\n')
+        
+        print("Finished training, testing, and logging. Files saved to" , self.config['PATH'], '\n')
         
     
         print('**********',self.config['PRNG_METHOD'],'finished**********')

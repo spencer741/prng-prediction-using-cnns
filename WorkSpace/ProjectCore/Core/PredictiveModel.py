@@ -109,7 +109,8 @@ class PredictiveModel:
               mode='min',
               use_validation=False,
               validation_split=0.0,
-              validation_data=0
+              validation_data=0,
+              disable_TQDMN = True 
              ):
         
         
@@ -140,15 +141,22 @@ class PredictiveModel:
         
         csv_logger = CSVLogger((save_path+'training_log.csv'), append=append, separator=',')
         
+        callbacks = None
+        
+        if(disable_TQDMN):
+            callbacks = [csv_logger, checkpoint]
+        else:
+            callbacks = [csv_logger, checkpoint, TQDMNotebookCallback()]
+ 
         
         history = None
         if(use_validation):
-            print('using validation split')
+            #print('using validation split')
             #validation_data=validation_data is split between x and y
-            history = self.model.fit(x_train,y_train,batch_size=batch_size,epochs=epochs,validation_split=validation_split,verbose=verbose, callbacks=[csv_logger,checkpoint, TQDMNotebookCallback()])
+            history = self.model.fit(x_train,y_train,batch_size=batch_size,epochs=epochs,validation_split=validation_split,verbose=verbose, callbacks=callbacks)
         else:
-            print('no validation split')
-            history = self.model.fit(x_train,y_train,batch_size=batch_size,epochs=epochs,verbose=verbose, callbacks=[csv_logger,checkpoint])
+            #print('no validation split')
+            history = self.model.fit(x_train,y_train,batch_size=batch_size,epochs=epochs,verbose=verbose, callbacks=callbacks)
         
         #self.save_model(save_path)
         
