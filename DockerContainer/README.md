@@ -24,7 +24,7 @@ docker build -t dockercontainer DockerContainer
 ```
 Before you run the command below, make sure you modify the path "C:\Users\YOURUSERNAMEHERE\Desktop\S20-team7-project\WorkSpace" to include the path to your local copy of the repository (C:\Users\YOURUSERNAMEHERE\Desktop\S20-team7-project\WorkSpace). Make sure to include \WorkSpace.
 
-***What we are doing here is building a local docker container where we run the Jupyter Lab stack. The /WorkSpace directory in the (Docker Container) Jupyter Lab will be mapped to the /WorkSpace folder in our repository. This means you can type the docker run command below, open up the file you want to work on in Jupyter Lab (via a browser on your local machine), save it, and then submit a pull request. Since all changes get persisted to the /WorkSpace folder within the repo, this is more of an automated workflow, especially if you are trying to contribute.***
+***What we are doing here is building a local docker container where we run the Jupyter Lab stack. The /WorkSpace directory in the (Docker Container) Jupyter Lab will be mapped to the /WorkSpace folder in your local copy of the repository. This means you can type the docker run command below, open up the file you want to work on in Jupyter Lab (via a browser on your local machine), save it, and then submit a pull request. Since all changes get persisted to the /WorkSpace folder within the repo, this is more of an automated workflow, especially if you are trying to contribute.***
 
 ```
 docker run -it --rm -p 8888:8888 --user root -e JUPYTER_ENABLE_LAB=yes -e GRANT_SUDO=yes -v C:\Users\YOURUSERNAMEHERE\Desktop\S20-team7-project\WorkSpace:/home/jovyan/WorkSpace dockercontainer
