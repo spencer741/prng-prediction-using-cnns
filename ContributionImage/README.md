@@ -24,6 +24,8 @@ Then Type:
 docker build -t dockercontainer DockerContainer
 docker build --rm -f ./ContributionImage/Dockerfile -t contributioncontainer .
 ```
+Where democontainer is the name of your built image (you can change this to whatever).
+
 Before you run the command below, make sure you modify the path "C:\Users\YOURUSERNAMEHERE\Desktop\S20-team7-project\WorkSpace" to reflect your path to the cloned repo. Make sure to include \WorkSpace.
 
 ```
