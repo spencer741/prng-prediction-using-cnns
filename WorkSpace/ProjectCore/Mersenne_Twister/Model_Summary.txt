@@ -1,0 +1,31 @@
+Made New Model...
+With configuration:
+{'VERBOSE': 0, 'IS_NEW_MODEL': True, 'PATH': './Mersenne_Twister/', 'SEED_METHOD': 'ticks', 'PRNG_METHOD': 'Mersenne_Twister', 'NUM_SETS': 10, 'SET_LEN': 500, 'BATCH_SIZE': 15, 'NUM_EPOCHS': 2, 'CHKPNT_MONITOR': 'mae', 'CHKPNT_MODE': 'min', 'LOUD_LOGGING': False, 'USE_VALIDATION': True, 'VALIDATION_SPLIT': 0.2, 'OVERRIDE_LOAD_COMPILATION': False, 'LR': 0.001, 'LOSS_METHOD': 'mean_squared_error'}
+Model: "sequential_4"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv_1 (Conv1D)              (None, 498, 4)            12        
+_________________________________________________________________
+conv_2 (Conv1D)              (None, 497, 4)            36        
+_________________________________________________________________
+conv_3 (Conv1D)              (None, 496, 4)            36        
+_________________________________________________________________
+conv_4 (Conv1D)              (None, 495, 4)            36        
+_________________________________________________________________
+maxpool_1 (MaxPooling1D)     (None, 495, 4)            0         
+_________________________________________________________________
+dropout_4 (Dropout)          (None, 495, 4)            0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 1980)              0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 4)                 7924      
+_________________________________________________________________
+dense_2 (Dense)              (None, 1)                 5         
+=================================================================
+Total params: 8,049
+Trainable params: 8,049
+Non-trainable params: 0
+_________________________________________________________________
+Pearson Correlation Coefficient:0.5308708594000344
+2-tailed p-value:                0.11436923873441229
