@@ -1,8 +1,10 @@
 FROM jupyter/datascience-notebook
 
+#spencer741 added keras-tqdm for team7
+#maintainer of previous file version:
 LABEL maintainer="Joshua L. Phillips <https://www.cs.mtsu.edu/~jphillips/>"
 
-#spencer741 added keras-tqdm for team7
+
 
 USER root
 
