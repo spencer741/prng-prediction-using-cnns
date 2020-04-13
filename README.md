@@ -42,7 +42,7 @@ Before choosing your option, read through the tutorial under option 1. This tuto
 
 [Read tutorial here for setup](https://github.com/CSCI4850/S20-team7-project/blob/master/DockerContainer/README.md)
 
-We recommend you read: **[more information about the code itself](https://github.com/CSCI4850/S20-team7-project/blob/master/DemoImage/Readme.md#running-code)**
+We recommend you read: [more information about the code itself](https://github.com/CSCI4850/S20-team7-project/blob/master/DemoImage/Readme.md#running-code)
 
 **Option 3:** 'simple' install 
 
@@ -60,4 +60,4 @@ cd ./WorkSpace/ProjectCore/
 python3 main.py
 ```
 We recommend you read:
-**[more information about the code itself](https://github.com/CSCI4850/S20-team7-project/blob/master/DemoImage/Readme.md#running-code)**
+[more information about the code itself](https://github.com/CSCI4850/S20-team7-project/blob/master/DemoImage/Readme.md#running-code)
