@@ -4,8 +4,6 @@ FROM jupyter/datascience-notebook
 #maintainer of previous file version:
 LABEL maintainer="Joshua L. Phillips <https://www.cs.mtsu.edu/~jphillips/>"
 
-
-
 USER root
 
 # Additional tools
