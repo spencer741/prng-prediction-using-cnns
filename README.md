@@ -32,7 +32,7 @@
                  Read more about each one at the top of each file.
 ```
 ### How to explore / run the code 
-Before choosing your option, read through the tutorial under option 1. This tutorial provides the best introduction for running the project in addition to **more information about the code itself**.
+Before choosing your option, read through the tutorial under option 1. This tutorial provides the best introduction for running the project in addition to **[more information about the code itself](https://github.com/CSCI4850/S20-team7-project/blob/master/DemoImage/Readme.md#running-code)**.
 
 **Option 1:** The Demo Image (Reduced Docker Image with only the dependencies). Recommended to run the Demo.
 
@@ -41,6 +41,8 @@ Before choosing your option, read through the tutorial under option 1. This tuto
 **Option 2:** The Contribution Image (Jupyter Lab on Docker). Recommended for contributors.
 
 [Read tutorial here for setup](https://github.com/CSCI4850/S20-team7-project/blob/master/DockerContainer/README.md)
+
+We recommend you read: **[more information about the code itself](https://github.com/CSCI4850/S20-team7-project/blob/master/DemoImage/Readme.md#running-code)**
 
 **Option 3:** 'simple' install 
 
@@ -57,3 +59,5 @@ cd ./WorkSpace/ProjectCore/
 
 python3 main.py
 ```
+We recommend you read:
+**[more information about the code itself](https://github.com/CSCI4850/S20-team7-project/blob/master/DemoImage/Readme.md#running-code)**
