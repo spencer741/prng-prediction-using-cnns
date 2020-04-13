@@ -37,12 +37,13 @@ Once you are dropped into the container session:
 cd WorkSpace
 ls
 ```
-Now you can see the WorkSpace rep folders and files. In order to run the demo:
+Now you can see the WorkSpace repo folders and files. In order to run the demo:
 
 ``` 
 cd ProjectCore
 python3 main.py
 ```
+Essentially, we are invoking a custom Experiment class that performs the experiment to the desired configuration. Read more at the top of ProjectCore/Core files.
 
 You can change the experiment configuration by `vi main.py` and modifying accordingly. The configuration dictionary contains the parameters for running the experiment.
 
