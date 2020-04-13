@@ -1,4 +1,7 @@
-scipy==1.4.1
-scikit-learn==0.22.2.post1
-Keras==2.3.1
-keras-tqdm==2.0.1
+scipy
+scikit-learn
+Keras
+keras-tqdm
+tensorflow
+IPython
+matplotlib
