@@ -12,7 +12,7 @@
 ### How to explore / run the code 
 **Option 1:** The Demo Image (Reduced Docker Image with only the dependencies). Recommended to run the Demo.
 
-[Read tutorial here for setup](https://github.com/CSCI4850/S20-team7-project/tree/master/DemoImage) dependency to explore our notebooks!
+[Read tutorial here for setup](https://github.com/CSCI4850/S20-team7-project/tree/master/DemoImage)
 
 **Option 2:** The Contribution Image (Jupyter Lab on Docker). Recommended for contributors.
 
