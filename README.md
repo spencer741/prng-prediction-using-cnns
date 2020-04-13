@@ -2,13 +2,11 @@
 
 ./WorkSpace/ProjectCore
 
-[Project Proposal](https://github.com/CSCI4850/S20-team7-project/blob/master/WorkSpace/Project%20Proposal/ProjectProposal.ipynb) (Now downstream)
+[Project Proposal](https://github.com/CSCI4850/S20-team7-project/blob/master/WorkSpace/Project%20Proposal/ProjectProposal.ipynb)
 
-[Milestones](https://github.com/CSCI4850/S20-team7-project/blob/master/Project%20Milestones.ipynb) (For frequent updates)
+[Milestones](https://github.com/CSCI4850/S20-team7-project/blob/master/Project%20Milestones.ipynb)
 
 [Links to Paper and Experimental Design] - Coming Soon.
-
-
 
 
 ### How to run the demo 
@@ -36,8 +34,7 @@ cd ./WorkSpace/ProjectCore/
 python3 main.py
 ```
 
-## Repository Structural Overview:
-Here is a trimmed down schema of our repository:
+## Repository Overview (trimmed):
 ```
 ├───DockerContainer 
 │   └─── Contains the Docker container with a tutorial on how to set up this project with Jupyter Lab.
