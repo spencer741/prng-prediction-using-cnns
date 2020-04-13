@@ -1,4 +1,4 @@
-# How to setup for contribution workflow OR just to explore and run code.
+# How to setup for contribution workflow / just to explore and run code.
 
 Note I am running Windows 10 and using powershell, but the commands/instructions are pretty much the same for other platforms. On a unix-based platform, you will use / instead of \ when specifying the path.
 
