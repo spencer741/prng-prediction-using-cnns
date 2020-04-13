@@ -1,4 +1,5 @@
-# How to setup for contribution workflow / just to explore and run code.
+# How to setup for contribution workflow.
+This is also a good way to explore and run the code in general.
 
 Note I am running Windows 10 and using powershell, but the commands/instructions are pretty much the same for other platforms. On a unix-based platform, you will use / instead of \ when specifying the path.
 
@@ -22,7 +23,7 @@ Then Type:
 ```
 docker build -t dockercontainer DockerContainer
 ```
-Before you run the command below, make sure you modify the path "C:\Users\YOURUSERNAMEHERE\Desktop\S20-team7-project\WorkSpace" to include the path to your local copy of the repository (C:\Users\YOURUSERNAMEHERE\Desktop\S20-team7-project\WorkSpace). Make sure to include \WorkSpace.
+Before you run the command below, make sure you modify the path "C:\Users\YOURUSERNAMEHERE\Desktop\S20-team7-project\WorkSpace" to reflect your path to the cloned repo. Make sure to include \WorkSpace.
 
 ***What we are doing here is building a local docker container where we run the Jupyter Lab stack. The /WorkSpace directory in the (Docker Container) Jupyter Lab will be mapped to the /WorkSpace folder in your local copy of the repository. This means you can type the docker run command below, open up the file you want to work on in Jupyter Lab (via a browser on your local machine), save it, and then submit a pull request. Since all changes get persisted to the /WorkSpace folder within the repo, this is more of an automated workflow, especially if you are trying to contribute.***
 
@@ -40,7 +41,9 @@ Now, to access Jupyter Lab, look for something like this in your command line ou
 [I 00:11:03.610 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 ```
 
-Copy the url (preferably 2nd one) and paste into your browser. Jupyter Lab should now load. This is because we forwarded the port from the docker container to localhost. Note that with this image, there are a lot of extra dependencies that are not critical for our project to run. Navigate to the /WorkSpace Directory and start hacking.
+Copy the url (preferably 2nd one) and paste into your browser. Jupyter Lab should now load. How? Because forwarded the port from the docker container to localhost when we ran the container. 
+
+Note that with this image, there are a lot of extra dependencies that are not critical for our project to run. Navigate to the /WorkSpace Directory and start hacking.
 
 Note that the CSCI4850 Docker Container does not satisfy all requirements for our project to run.
 
