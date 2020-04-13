@@ -37,7 +37,10 @@ Once you are dropped into the container session:
 cd WorkSpace
 ls
 ```
-Now you can see the WorkSpace repo folders and files. In order to run the demo:
+Now you can see the WorkSpace repo folders and files.
+
+#### Running Code
+In order to run the demo:
 
 ``` 
 cd ProjectCore
