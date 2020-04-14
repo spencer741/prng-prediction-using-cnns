@@ -28,7 +28,7 @@ Where democontainer is the name of your built image (you can change this to what
 Before you run the command below, make sure you modify the path "C:\Users\YOURUSERNAMEHERE\Desktop\S20-team7-project\WorkSpace" to reflect your path to the cloned repo. Make sure to include \WorkSpace.
 
 ```
-docker run -it --rm -p 8888:8888 --user root -e JUPYTER_ENABLE_LAB=yes -e GRANT_SUDO=yes -v C:\Users\YOURUSERNAMEHERE\Desktop\S20-team7-project\WorkSpace:/home/jovyan/WorkSpace dockercontainer
+docker run -it --rm -p 8888:8888 --user root -e JUPYTER_ENABLE_LAB=yes -e GRANT_SUDO=yes -v C:\Users\YOURUSERNAMEHERE\Desktop\S20-team7-project\WorkSpace:/home/jovyan/WorkSpace contributioncontainer
 ```
 
 What we are doing here is building a local docker container where we run the Jupyter Lab stack. The /WorkSpace directory in the Docker Container will be mapped to the /WorkSpace folder in your local copy of the repository. This means you can type the docker run command, open up the file you want to work on in Jupyter Lab (via a browser on your local machine), save it, and then submit a pull request. Since all changes get persisted to the /WorkSpace folder within the repo, this is more of an automated workflow, especially if you are trying to contribute.
