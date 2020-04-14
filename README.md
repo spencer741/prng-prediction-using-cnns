@@ -12,9 +12,9 @@
 
 ### Repository Overview (trimmed):
 ```
-├───ContributionContainer 
+├───ContributionImage
 │   └─── Contains Dockerfile with a tutorial on how to set up this project with Jupyter Lab.
-├───DemoContainer
+├───DemoImage
 │   └─── Contains Dockerfile with a tutorial on how to set up this project with cli.
 └───WorkSpace
     ├───Milestones
