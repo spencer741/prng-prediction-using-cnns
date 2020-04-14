@@ -21,7 +21,6 @@ cd S20-team7-project
 ```
 Then Type:
 ```
-docker build -t dockercontainer DockerContainer
 docker build --rm -f ./ContributionImage/Dockerfile -t contributioncontainer .
 ```
 Where democontainer is the name of your built image (you can change this to whatever).
