@@ -165,7 +165,7 @@ def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
             for i in range(len(seedlist)):
                 if i is 0:
                     val = int(seedlist[j-1]) + int(seedlist[k-1]) % 10 #arbitrary mod?
-                    numlist.append(out)
+                    numlist.append(val)
                 elif 0 < i < len(seedlist) - 1:
                     seedlist[i] = seedlist[i+1] # shift array
                 else:

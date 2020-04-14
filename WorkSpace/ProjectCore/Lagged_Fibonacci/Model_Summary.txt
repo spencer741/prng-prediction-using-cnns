@@ -1,7 +1,7 @@
 Made New Model...
 With configuration:
-{'DISABLE_TQDMN': False, 'VERBOSE': 1, 'LOUD_LOGGING': True, 'IS_NEW_MODEL': True, 'PATH': './Middle_Square_Secondary/', 'SEED_METHOD': 'ticks', 'PRNG_METHOD': 'Middle_Square', 'NUM_SETS': 1000, 'SET_LEN': 2000, 'BATCH_SIZE': 15, 'NUM_EPOCHS': 5, 'CHKPNT_MONITOR': 'mae', 'CHKPNT_MODE': 'min', 'USE_VALIDATION': True, 'VALIDATION_SPLIT': 0.2, 'OVERRIDE_LOAD_COMPILATION': False, 'LR': 0.001, 'LOSS_METHOD': 'mean_absolute_error'}
-Model: "sequential_2"
+{'DISABLE_TQDMN': False, 'VERBOSE': 1, 'LOUD_LOGGING': True, 'IS_NEW_MODEL': True, 'PATH': './Lagged_Fibonacci/', 'SEED_METHOD': 'ticks_LF', 'PRNG_METHOD': 'Lagged_Fibonacci', 'NUM_SETS': 1000, 'SET_LEN': 2000, 'BATCH_SIZE': 15, 'NUM_EPOCHS': 5, 'CHKPNT_MONITOR': 'mae', 'CHKPNT_MODE': 'min', 'USE_VALIDATION': True, 'VALIDATION_SPLIT': 0.2, 'OVERRIDE_LOAD_COMPILATION': False, 'LR': 0.001, 'LOSS_METHOD': 'mean_absolute_error'}
+Model: "sequential_1"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -15,7 +15,7 @@ conv_4 (Conv1D)              (None, 1995, 4)           36
 _________________________________________________________________
 maxpool_1 (MaxPooling1D)     (None, 1995, 4)           0         
 _________________________________________________________________
-dropout_2 (Dropout)          (None, 1995, 4)           0         
+dropout_1 (Dropout)          (None, 1995, 4)           0         
 _________________________________________________________________
 flatten_1 (Flatten)          (None, 7980)              0         
 _________________________________________________________________
@@ -27,5 +27,5 @@ Total params: 32,049
 Trainable params: 32,049
 Non-trainable params: 0
 _________________________________________________________________
-Pearson Correlation Coefficient:0.8765993008265608
-2-tailed p-value:                2.7494e-319
+Pearson Correlation Coefficient:0.5264539410275137
+2-tailed p-value:                2.206479151092223e-72

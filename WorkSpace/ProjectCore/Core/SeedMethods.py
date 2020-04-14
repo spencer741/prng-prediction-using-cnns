@@ -15,8 +15,8 @@ def ticks(t):
     #return (datetime.utcnow() - datetime(1970, 1, 1)).total_seconds()
 
 
-
-    
+def ticks_LF(t):
+    return  int(str( int( (datetime.utcnow() - datetime(1, 1, 1)).total_seconds() * 10000000 ))[-10:])
     
 
 
