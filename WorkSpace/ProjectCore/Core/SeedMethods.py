@@ -16,7 +16,24 @@ def ticks(t):
 
 
 def ticks_LF(t):
-    return  int(str( int( (datetime.utcnow() - datetime(1, 1, 1)).total_seconds() * 10000000 ))[-10:])
+    seed = int(str( int( (datetime.utcnow() - datetime(1, 1, 1)).total_seconds() * 10000000 ))[-10:])
+    
+    flag = False
+    for i in range(len(str(seed))):
+        if(int(str(seed)[i]) % 2 == 0):
+            flag = False
+        else: # if digit is odd, we can break out of loop
+            flag = True
+            break;
+
+    if(flag):
+        #print(str(seed))
+        return seed
+    else:
+        seed = ticks_LF(t)
+        
+    return seed
+
     
 
 

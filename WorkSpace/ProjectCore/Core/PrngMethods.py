@@ -150,6 +150,8 @@ def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
         if(i > k):
             flag = True
             break
+            
+        #print(str(seed)[i])
         if(int(str(seed)[i]) % 2 != 0):
             flag = True
             break
