@@ -61,8 +61,11 @@ class DataBroker:
         for i in range(self.numsets):
             t = getattr(Core.SeedMethods, self.seed_method)(t)
             temp = getattr(Core.PrngMethods, self.prng_method)(t,self.setlength)
+            print(len(temp), 'and', self.setlength end = '<->')
+            print(t, end = ' ')
             for a in range(len(temp)): #little expensive
                 temp[a] = int(temp[a])
+            
             n = temp[-1]
             y.append(n)
             x.append(temp[:-1])

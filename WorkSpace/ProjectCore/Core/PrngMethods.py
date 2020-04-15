@@ -139,16 +139,17 @@ def Linear_Congruential(seed, listlength, modulus=4294967291, a=1588635695, c=1 
 </notes>
 '''    
 def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
-    #litte dirty and expensive with validation checks
-    #validation checks
-    # 0 < j < k && k has to be greater than seed length.
-    if(not(0 < j and j < k) or len(str(seed)) < k ):
+    
+    # 0 < j < k
+    if(not(0 < j and j < k)):
         return
     
     #If addition is used, it is required that at least one of the first k values chosen to initialise the generator be odd;
-    
     flag = False
-    for i in range(k):
+    for i in range(len(str(seed))):
+        if(i > k):
+            flag = True
+            break
         if(int(str(seed)[i]) % 2 != 0):
             flag = True
             break
