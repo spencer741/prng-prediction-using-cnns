@@ -3,16 +3,23 @@ Normally, a (pseudo-)random number generator is a deterministic algorithm that g
 
 The seed for each PRNG will be the result of this.
 
-
 A single tick represents one hundred nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond, or 10 million ticks in a second. This will allow enough spread between occaisonally retreived ticks, where we can assume reasonable pseudo-unpredictabililty. This serves as a simplistic and constantly changing control mechanism for being able to seed PRNGs and test experimental outcomes. While not the most cryptographically strong, we needed a way to have some controlled aspect of seed generation to feed into generators of varying cryptographic complexity (to have some baseline of comparison).
+
+Note that t is an optional parameter if needed. Since the calls are genralized in DataBroker, parameters have to be the same.
 
 '''
 
 from datetime import *
+from time import sleep
 
 def ticks(t):
-    return int( str( int( (datetime.utcnow() - datetime(1, 1, 1)).total_seconds() * 10000000 ))[-6:])
-    #return (datetime.utcnow() - datetime(1970, 1, 1)).total_seconds()
+    
+    
+    #seed = int( str( int ( (datetime.utcnow() - datetime(1, 1, 1)).total_seconds() * 10000000) )[-6:])
+    seed = (datetime.utcnow() - datetime(1970, 1, 1)).total_seconds() * 10000000
+    print(seed, end = ' ')
+    return seed
+    #
 
 
 def ticks_LF(t):
@@ -27,7 +34,6 @@ def ticks_LF(t):
             break;
 
     if(flag):
-        #print(str(seed))
         return seed
     else:
         seed = ticks_LF(t)
@@ -35,6 +41,14 @@ def ticks_LF(t):
     return seed
 
     
-
-
+    
+def ticks_WH(t):
+    lst = []
+    for i in range(3):
+        lst.append(ticks(t))
+        #time delay
+        print(lst[i], end = ' ')
+        #print(lst[i],end = ' ')
+        sleep(1/lst[i])
+    return lst
 

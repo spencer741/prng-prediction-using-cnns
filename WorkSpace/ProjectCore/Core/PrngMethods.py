@@ -144,19 +144,18 @@ def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
     if(not(0 < j and j < k)):
         return
     
-    #If addition is used, it is required that at least one of the first k values chosen to initialise the generator be odd;
+    #If addition is used, it is required that at least one of the first k values 
+    # chosen to initialise the generator be odd
     flag = False
     for i in range(len(str(seed))):
         if(i > k):
             flag = True
             break
             
-        #print(str(seed)[i])
         if(int(str(seed)[i]) % 2 != 0):
             flag = True
             break
     
-    #implementation  
     numlist = []
     seedlist = []
     
@@ -199,7 +198,11 @@ def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
         ... so I am assuming it can be over 30,000.
 </notes>
 '''
-def Wichmann_Hill(seed1, seed2, seed3, listlength):
+def Wichmann_Hill(seedlst, listlength):
+    seed1 = seedlst[0]
+    seed2 = seedlst[1]
+    seed3 = seedlst[2]
+    
     numlist = []
     for i in range(listlength):
        

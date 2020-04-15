@@ -1,31 +1,31 @@
 Made New Model...
 With configuration:
-{'VERBOSE': 0, 'IS_NEW_MODEL': True, 'PATH': './Mersenne_Twister/', 'SEED_METHOD': 'ticks', 'PRNG_METHOD': 'Mersenne_Twister', 'NUM_SETS': 10, 'SET_LEN': 500, 'BATCH_SIZE': 15, 'NUM_EPOCHS': 2, 'CHKPNT_MONITOR': 'mae', 'CHKPNT_MODE': 'min', 'LOUD_LOGGING': False, 'USE_VALIDATION': True, 'VALIDATION_SPLIT': 0.2, 'OVERRIDE_LOAD_COMPILATION': False, 'LR': 0.001, 'LOSS_METHOD': 'mean_squared_error'}
-Model: "sequential_4"
+{'DISABLE_TQDMN': False, 'VERBOSE': 1, 'LOUD_LOGGING': True, 'IS_NEW_MODEL': True, 'PATH': './Mersenne_Twister/', 'SEED_METHOD': 'ticks', 'PRNG_METHOD': 'Mersenne_Twister', 'NUM_SETS': 1000, 'SET_LEN': 1000, 'BATCH_SIZE': 15, 'NUM_EPOCHS': 5, 'CHKPNT_MONITOR': 'mae', 'CHKPNT_MODE': 'min', 'USE_VALIDATION': True, 'VALIDATION_SPLIT': 0.2, 'OVERRIDE_LOAD_COMPILATION': False, 'LR': 0.001, 'LOSS_METHOD': 'mean_absolute_error'}
+Model: "sequential_2"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
-conv_1 (Conv1D)              (None, 498, 4)            12        
+conv_1 (Conv1D)              (None, 998, 4)            12        
 _________________________________________________________________
-conv_2 (Conv1D)              (None, 497, 4)            36        
+conv_2 (Conv1D)              (None, 997, 4)            36        
 _________________________________________________________________
-conv_3 (Conv1D)              (None, 496, 4)            36        
+conv_3 (Conv1D)              (None, 996, 4)            36        
 _________________________________________________________________
-conv_4 (Conv1D)              (None, 495, 4)            36        
+conv_4 (Conv1D)              (None, 995, 4)            36        
 _________________________________________________________________
-maxpool_1 (MaxPooling1D)     (None, 495, 4)            0         
+maxpool_1 (MaxPooling1D)     (None, 995, 4)            0         
 _________________________________________________________________
-dropout_4 (Dropout)          (None, 495, 4)            0         
+dropout_2 (Dropout)          (None, 995, 4)            0         
 _________________________________________________________________
-flatten_1 (Flatten)          (None, 1980)              0         
+flatten_1 (Flatten)          (None, 3980)              0         
 _________________________________________________________________
-dense_1 (Dense)              (None, 4)                 7924      
+dense_1 (Dense)              (None, 4)                 15924     
 _________________________________________________________________
 dense_2 (Dense)              (None, 1)                 5         
 =================================================================
-Total params: 8,049
-Trainable params: 8,049
+Total params: 16,049
+Trainable params: 16,049
 Non-trainable params: 0
 _________________________________________________________________
-Pearson Correlation Coefficient:0.5308708594000344
-2-tailed p-value:                0.11436923873441229
+Pearson Correlation Coefficient:-0.026314862711579567
+2-tailed p-value:                0.40583117967367127
