@@ -194,7 +194,7 @@ class Experiment:
         plt.plot(y_pred, color = 'blue', label = 'Predicted Data')
         plt.legend()
         plt.title('Correlation Plot From Testing\n')
-        plt.ylabel('Correlation')
+        plt.ylabel('Normalized PRN (Blue is Predicted ... Red is Target)')
         plt.xlabel('Sequential Prediction Index (from 0 to Num_SETs - 1)')
         
         y_pred = y_pred.flatten() #flatten y_pred to for PCC calculation to include in title
