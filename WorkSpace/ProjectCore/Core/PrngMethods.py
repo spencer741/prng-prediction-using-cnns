@@ -211,6 +211,7 @@ def Wichmann_Hill(seedlst, listlength):
         seed3 = 170 * seed3 % 30323
 
         numlist.append((float(seed1)/30269.0 + float(seed2)/30307.0 + float(seed3)/30323.0) % 1.0)
+    #print(numlist[0:50])
     return numlist
     
     

@@ -189,6 +189,11 @@ class Experiment:
                   
         y_pred = self.pred.Predict(self.db.x_test, self.db.y_test)
         y_actual = self.db.y_test
+        
+        results = self.pred.model.evaluate(self.db.x_test, self.db.y_test, batch_size=15)
+    
+        print('test loss, test acc:', results)
+
 
         plt.plot(y_actual, color = 'red', label = 'Target Data')
         plt.plot(y_pred, color = 'blue', label = 'Predicted Data')
@@ -199,10 +204,10 @@ class Experiment:
         
         y_pred = y_pred.flatten() #flatten y_pred to for PCC calculation to include in title
 
-        #print(y_actual)
-        #print(y_pred)
-        #print(y_actual.shape)
-        #print(y_pred.shape)
+        #print('actual', y_actual)
+        #print('pred',y_pred)
+        print(y_actual.shape)
+        print(y_pred.shape)
 
         pearsoncorr = pearsonr(y_actual,y_pred)
         

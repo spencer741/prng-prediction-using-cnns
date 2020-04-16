@@ -13,13 +13,12 @@ from datetime import *
 from time import sleep
 
 def ticks(t):
-    
-    
-    #seed = int( str( int ( (datetime.utcnow() - datetime(1, 1, 1)).total_seconds() * 10000000) )[-6:])
-    seed = (datetime.utcnow() - datetime(1970, 1, 1)).total_seconds() * 10000000
-    print(seed, end = ' ')
-    return seed
-    #
+    t = int( str( int( (datetime.utcnow() - datetime(1970, 1, 1)).total_seconds() * 10000000))[-6:])
+    if(t==0):
+        t = ticks()
+    return t
+        
+    #return (datetime.utcnow() - datetime(1970, 1, 1)).total_seconds()
 
 
 def ticks_LF(t):
@@ -47,7 +46,7 @@ def ticks_WH(t):
     for i in range(3):
         lst.append(ticks(t))
         #time delay
-        print(lst[i], end = ' ')
+        #print(lst[i], end = ' ')
         #print(lst[i],end = ' ')
         sleep(1/lst[i])
     return lst
