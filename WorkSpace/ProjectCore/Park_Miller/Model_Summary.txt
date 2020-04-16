@@ -1,7 +1,7 @@
 Made New Model...
 With configuration:
-{'DISABLE_TQDMN': False, 'VERBOSE': 0, 'LOUD_LOGGING': True, 'IS_NEW_MODEL': True, 'PATH': './Middle_Square/', 'SEED_METHOD': 'ticks', 'PRNG_METHOD': 'Middle_Square', 'NUM_SETS': 1000, 'SET_LEN': 1000, 'BATCH_SIZE': 15, 'NUM_EPOCHS': 30, 'CHKPNT_MONITOR': 'mae', 'CHKPNT_MODE': 'min', 'USE_VALIDATION': True, 'VALIDATION_SPLIT': 0.3, 'OVERRIDE_LOAD_COMPILATION': False, 'LR': 0.001, 'LOSS_METHOD': 'mean_absolute_error'}
-Model: "sequential_1"
+{'DISABLE_TQDMN': False, 'VERBOSE': 0, 'LOUD_LOGGING': True, 'IS_NEW_MODEL': True, 'PATH': './Park_Miller/', 'SEED_METHOD': 'ticks', 'PRNG_METHOD': 'Park_Miller', 'NUM_SETS': 1000, 'SET_LEN': 1000, 'BATCH_SIZE': 15, 'NUM_EPOCHS': 30, 'CHKPNT_MONITOR': 'mae', 'CHKPNT_MODE': 'min', 'USE_VALIDATION': True, 'VALIDATION_SPLIT': 0.3, 'OVERRIDE_LOAD_COMPILATION': False, 'LR': 0.001, 'LOSS_METHOD': 'mean_absolute_error'}
+Model: "sequential_3"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -15,7 +15,7 @@ conv_4 (Conv1D)              (None, 995, 4)            36
 _________________________________________________________________
 maxpool_1 (MaxPooling1D)     (None, 995, 4)            0         
 _________________________________________________________________
-dropout_1 (Dropout)          (None, 995, 4)            0         
+dropout_3 (Dropout)          (None, 995, 4)            0         
 _________________________________________________________________
 flatten_1 (Flatten)          (None, 3980)              0         
 _________________________________________________________________
@@ -27,5 +27,5 @@ Total params: 16,049
 Trainable params: 16,049
 Non-trainable params: 0
 _________________________________________________________________
-Pearson Correlation Coefficient:0.8872280266519601
-2-tailed p-value:                0.0
+Pearson Correlation Coefficient:0.17632744725909677
+2-tailed p-value:                1.9882019900233887e-08
