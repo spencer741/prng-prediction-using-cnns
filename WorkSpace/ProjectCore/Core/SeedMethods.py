@@ -18,11 +18,10 @@ def ticks(t):
         t = ticks()
     return t
         
-    #return (datetime.utcnow() - datetime(1970, 1, 1)).total_seconds()
-
-
 def ticks_LF(t):
-    seed = int(str( int( (datetime.utcnow() - datetime(1, 1, 1)).total_seconds() * 10000000 ))[-10:])
+    seed = int(str( int( (datetime.utcnow() - datetime(1970, 1, 1)).total_seconds() * 10000000 ))[-10:])
+    
+    len(str(seed))
     
     flag = False
     for i in range(len(str(seed))):
@@ -39,15 +38,5 @@ def ticks_LF(t):
         
     return seed
 
-    
-    
-def ticks_WH(t):
-    lst = []
-    for i in range(3):
-        lst.append(ticks(t))
-        #time delay
-        #print(lst[i], end = ' ')
-        #print(lst[i],end = ' ')
-        sleep(1/lst[i])
-    return lst
+
 

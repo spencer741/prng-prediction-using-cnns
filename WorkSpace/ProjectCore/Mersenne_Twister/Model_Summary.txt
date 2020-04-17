@@ -1,31 +1,31 @@
 Made New Model...
 With configuration:
-{'DISABLE_TQDMN': False, 'VERBOSE': 0, 'LOUD_LOGGING': True, 'IS_NEW_MODEL': True, 'PATH': './Mersenne_Twister/', 'SEED_METHOD': 'ticks', 'PRNG_METHOD': 'Mersenne_Twister', 'NUM_SETS': 1000, 'SET_LEN': 1000, 'BATCH_SIZE': 15, 'NUM_EPOCHS': 30, 'CHKPNT_MONITOR': 'mae', 'CHKPNT_MODE': 'min', 'USE_VALIDATION': True, 'VALIDATION_SPLIT': 0.3, 'OVERRIDE_LOAD_COMPILATION': False, 'LR': 0.001, 'LOSS_METHOD': 'mean_absolute_error'}
-Model: "sequential_2"
+{'DISABLE_TQDMN': False, 'VERBOSE': 0, 'LOUD_LOGGING': True, 'IS_NEW_MODEL': True, 'PATH': './Mersenne_Twister/', 'SEED_METHOD': 'ticks', 'PRNG_METHOD': 'Mersenne_Twister', 'NUM_SETS': 1000, 'SET_LEN': 2000, 'BATCH_SIZE': 15, 'NUM_EPOCHS': 30, 'CHKPNT_MONITOR': 'mae', 'CHKPNT_MODE': 'min', 'USE_VALIDATION': True, 'VALIDATION_SPLIT': 0.3, 'OVERRIDE_LOAD_COMPILATION': False, 'LR': 0.001, 'LOSS_METHOD': 'mean_absolute_error'}
+Model: "sequential_5"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
-conv_1 (Conv1D)              (None, 998, 4)            12        
+conv_1 (Conv1D)              (None, 1998, 4)           12        
 _________________________________________________________________
-conv_2 (Conv1D)              (None, 997, 4)            36        
+conv_2 (Conv1D)              (None, 1997, 4)           36        
 _________________________________________________________________
-conv_3 (Conv1D)              (None, 996, 4)            36        
+conv_3 (Conv1D)              (None, 1996, 4)           36        
 _________________________________________________________________
-conv_4 (Conv1D)              (None, 995, 4)            36        
+conv_4 (Conv1D)              (None, 1995, 4)           36        
 _________________________________________________________________
-maxpool_1 (MaxPooling1D)     (None, 995, 4)            0         
+maxpool_1 (MaxPooling1D)     (None, 1995, 4)           0         
 _________________________________________________________________
-dropout_2 (Dropout)          (None, 995, 4)            0         
+dropout_5 (Dropout)          (None, 1995, 4)           0         
 _________________________________________________________________
-flatten_1 (Flatten)          (None, 3980)              0         
+flatten_1 (Flatten)          (None, 7980)              0         
 _________________________________________________________________
-dense_1 (Dense)              (None, 4)                 15924     
+dense_1 (Dense)              (None, 4)                 31924     
 _________________________________________________________________
 dense_2 (Dense)              (None, 1)                 5         
 =================================================================
-Total params: 16,049
-Trainable params: 16,049
+Total params: 32,049
+Trainable params: 32,049
 Non-trainable params: 0
 _________________________________________________________________
-Pearson Correlation Coefficient:0.04421444865513321
-2-tailed p-value:                0.16237804279249243
+Pearson Correlation Coefficient:0.014152322021882097
+2-tailed p-value:                0.6548762430395717

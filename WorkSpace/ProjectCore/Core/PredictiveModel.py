@@ -41,6 +41,8 @@ from scipy.stats.stats import pearsonr
 import os
 import shutil
 
+import pandas as pd
+
 class PredictiveModel:
     def __init__(self, input_width : int,  path:str, is_new_model=True, config='No Config Available'):
         self.path = path
@@ -95,7 +97,8 @@ class PredictiveModel:
         return model
 
     #Description:
-    #Trains the already created neural net with passed params for training and logging (using general file i/o, ModelCheckpoint, and CsvLogger).
+    #Trains the already created neural net with passed params for training and logging 
+    #(using general file i/o, ModelCheckpoint, and CsvLogger).
     #Note that Modelcheckpoint is always implemented, but parameters can be modified.
     def Train(self,
               x_train,
@@ -127,7 +130,6 @@ class PredictiveModel:
         """))
         
         
-        
         if(save_path == None):
             save_path = self.path
             
@@ -137,7 +139,12 @@ class PredictiveModel:
             
         #if(enable_checkpointing):
         #perhaps allow the user to enable model checkpointing in the future (with all params) and save the model at the bottom
-        checkpoint = ModelCheckpoint((save_path+'model.hd5'), monitor=monitor, verbose=verbose, save_weights_only=False, save_best_only=True, mode=mode)
+        checkpoint = ModelCheckpoint((save_path+'model.hd5'),
+                                     monitor=monitor,
+                                     verbose=verbose,
+                                     save_weights_only=False,
+                                     save_best_only=True,
+                                     mode=mode)
         
         csv_logger = CSVLogger((save_path+'training_log.csv'), append=append, separator=',')
         
@@ -148,17 +155,23 @@ class PredictiveModel:
         else:
             callbacks = [csv_logger, checkpoint, TQDMNotebookCallback()]
  
-        
         history = None
         if(use_validation):
-            #print('using validation split')
             #validation_data=validation_data is split between x and y
-            history = self.model.fit(x_train,y_train,batch_size=batch_size,epochs=epochs,validation_split=validation_split,verbose=verbose, callbacks=callbacks)
+            history = self.model.fit(x_train,
+                                     y_train,
+                                     batch_size=batch_size,
+                                     epochs=epochs,
+                                     validation_split=validation_split,
+                                     verbose=verbose,
+                                     callbacks=callbacks)
         else:
-            #print('no validation split')
-            history = self.model.fit(x_train,y_train,batch_size=batch_size,epochs=epochs,verbose=verbose, callbacks=callbacks)
-        
-        #self.save_model(save_path)
+            history = self.model.fit(x_train,
+                                     y_train,
+                                     batch_size=batch_size,
+                                     epochs=epochs,
+                                     verbose=verbose,
+                                     callbacks=callbacks)
         
         return history
         
@@ -173,26 +186,32 @@ class PredictiveModel:
                 open((save_path+'test_results.csv'), 'w').close()
             
         y_pred = self.model.predict(x_test)
-        f=open((save_path+'test_results.csv'),'ab')
+        #f=open((save_path+'test_results.csv'),'ab')
         
         y_pred = y_pred.flatten()
         pearsoncorr = pearsonr(y_test,y_pred) # y_actual and y_pred
         pearsoncorr = np.array(pearsoncorr)
         
-        np.savetxt(f, pearsoncorr, header="pearsoncorr", delimiter=",")
+        #np.savetxt(f, pearsoncorr, header="pearsoncorr", delimiter=",")
         
-        np.savetxt(f, y_pred, header="y_pred", delimiter=",")
-        np.savetxt(f, y_test, header="y_test", delimiter=",")
+        
+        df = pd.DataFrame({"y_test" : y_test,
+                           "y_pred" : y_pred,
+                           "Pearson Co. For Entire Data Set (Not individual)": pearsoncorr[0],
+                           "P-Value for Pco": pearsoncorr[1]})
+        
+        #csvlogger apparently not supported with model.predict... have to do it manually (/externally).
+        df.to_csv(save_path + "test_results.csv", index=False,mode="a")
+        
+        #np.savetxt(f, np.c_[y_test,y_pred], header="y_test,y_pred", delimiter=",")
+        #np.savetxt(f, y_test, header="y_test", delimiter=",")
         
         if(os.path.isfile((save_path+'Model_Summary.txt'))):
             content = "Pearson Correlation Coefficient:" + str(pearsoncorr[0]) + '\n'
             content += "2-tailed p-value:                "+ str(pearsoncorr[1]) + '\n'
         
-        
             with open(save_path + 'Model_Summary.txt', 'a+') as fh:
                 fh.write(content)
-
-        #csvlogger apparently not supported with model.predict... have to do it manually (/externally).
         
         return y_pred
     

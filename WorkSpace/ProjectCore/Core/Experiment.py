@@ -90,8 +90,6 @@ class Experiment:
         self.performcount += 1
         loud_logging = self.config['LOUD_LOGGING']
         
-        
-        
         ### extra logging
         if(loud_logging):
             
@@ -149,8 +147,6 @@ class Experiment:
                                   disable_TQDMN = self.config['DISABLE_TQDMN']
                                   )
         
-        
-        
         if(loud_logging):
             print("Training Finished!\n\nPrinting results...\n")
             print("History Keys: ", history.history.keys())
@@ -158,9 +154,12 @@ class Experiment:
         
         ### summarize history for loss ###
         
-        # Note: if monitoring two metrics that are the same for checkpointing and training, you only need to display 'loss', which keras returns by default. 
-        # Otherwise if you want to see the metric associated with checkpoint monitor loss, you need to add that to the graph. Also note thatit might be advisable 
-        # to create two graphs for the latter, because different loss functions interpret loss differently, possibly not allowing you to see scaled plots correctly. 
+        # Note: if monitoring two metrics that are the same for checkpointing and training,
+        # you only need to display 'loss', which keras returns by default. 
+        # Otherwise if you want to see the metric associated with checkpoint monitor loss,
+        # you need to add that to the graph. Also note thatit might be advisable 
+        # to create two graphs for the latter, because different loss functions interpret
+        # loss differently, possibly not allowing you to see scaled plots correctly. 
         # you will have to add those accordingly. See print(history.history.keys())
         plt.plot(history.history['loss'], label = 'loss')
         plt.plot(history.history['val_loss'], label = 'validation_loss')
@@ -171,7 +170,8 @@ class Experiment:
         plt.ylabel('loss')
         plt.xlabel('epoch')
         #plt.legend(['loss', 'validation_loss',], loc='upper left') #'train_mae', 'test_mae'
-          
+        
+        #save loss plot
         i = 0
         while True:
             i += 1
@@ -183,36 +183,39 @@ class Experiment:
         
         plt.show()
         
-        
-                  
         ### summarize prediction data for regression analysis ###
-                  
+        
+        #predict (testing)
         y_pred = self.pred.Predict(self.db.x_test, self.db.y_test)
         y_actual = self.db.y_test
         
-        results = self.pred.model.evaluate(self.db.x_test, self.db.y_test, batch_size=15)
+        #evaluate for actual accuracy printout
+        results = self.pred.model.evaluate(self.db.x_test, self.db.y_test, batch_size=self.config['BATCH_SIZE'])
     
+        #actual accuracy
         print('test loss, test acc:', results)
 
-
+        ### summarize history for regression ###
         plt.plot(y_actual, color = 'red', label = 'Target Data')
         plt.plot(y_pred, color = 'blue', label = 'Predicted Data')
         plt.legend()
         plt.title('Correlation Plot From Testing\n')
-        plt.ylabel('Normalized PRN (Blue is Predicted ... Red is Target)')
+        plt.ylabel('Normalized Pseudo Random Number')
         plt.xlabel('Sequential Prediction Index (from 0 to Num_SETs - 1)')
         
         y_pred = y_pred.flatten() #flatten y_pred to for PCC calculation to include in title
 
         #print('actual', y_actual)
         #print('pred',y_pred)
-        print(y_actual.shape)
-        print(y_pred.shape)
+        #print(y_actual.shape)
+        #print(y_pred.shape)
 
+        #Compute pearson coefficient and append to regression plot.
         pearsoncorr = pearsonr(y_actual,y_pred)
         
         plt.title('Prediction\n' + "Pearson Correlation Coefficient: "+ str(pearsoncorr[0]) +"\n2-tailed p-value: " + str(pearsoncorr[1]) )
         
+        #save regression plot.
         i = 0
         while True:
             i += 1
@@ -224,6 +227,7 @@ class Experiment:
         
         plt.show()
         
+        #print out pearson data
         print("\nPearson Correlation Coefficient:", pearsoncorr[0])
         print("2-tailed p-value:                ", pearsoncorr[1] , '\n')
         
