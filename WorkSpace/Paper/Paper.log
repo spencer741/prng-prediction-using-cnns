@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.10)  16 APR 2020 21:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.10)  20 APR 2020 10:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -113,14 +113,105 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-) (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+\lst@mode=\count94
+\lst@gtempboxa=\box28
+\lst@token=\toks16
+\lst@length=\count95
+\lst@currlwidth=\dimen126
+\lst@column=\count96
+\lst@pos=\count97
+\lst@lostspace=\dimen127
+\lst@width=\dimen128
+\lst@newlines=\count98
+\lst@lineno=\count99
+\lst@maxwidth=\dimen129
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count100
+\lst@skipnumbers=\count101
+\lst@framebox=\box29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2018/02/11 v5.2c context-sensitive quotations (JAW)
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count102
+)
+\csq@reset=\count103
+\csq@gtype=\count104
+\csq@glevel=\count105
+\csq@qlevel=\count106
+\csq@maxlvl=\count107
+\csq@tshold=\count108
+\csq@ltx@everypar=\toks17
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2018/02/11 v5.2c csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count109
+\float@exts=\toks18
+\float@box=\box30
+\@float@everytoks=\toks19
+\@floatcapt=\box31
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen130
+\captionmargin@=\dimen131
+\captionwidth=\dimen132
+\caption@tempdima=\dimen133
+\caption@indent=\dimen134
+\caption@parindent=\dimen135
+\caption@hangindent=\dimen136
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+\c@KVtest=\count110
+\sf@farskip=\skip44
+\sf@captopadj=\dimen137
+\sf@capskip=\skip45
+\sf@nearskip=\skip46
+\c@subfigure=\count111
+\c@subfigure@save=\count112
+\c@lofdepth=\count113
+\c@subtable=\count114
+\c@subtable@save=\count115
+\c@lotdepth=\count116
+\sf@top=\skip47
+\sf@bottom=\skip48
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
-\@mathmargin=\skip44
+\@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -128,51 +219,51 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks15
-\ex@=\dimen126
+\@emptytoks=\toks20
+\ex@=\dimen138
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen127
+\pmbraise@=\dimen139
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count94
+\inf@bad=\count117
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count95
-\leftroot@=\count96
+\uproot@=\count118
+\leftroot@=\count119
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count97
-\DOTSCASE@=\count98
+\classnum@=\count120
+\DOTSCASE@=\count121
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box28
-\strutbox@=\box29
-\big@size=\dimen128
+\Mathstrutbox@=\box32
+\strutbox@=\box33
+\big@size=\dimen140
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count99
-\c@MaxMatrixCols=\count100
+\macc@depth=\count122
+\c@MaxMatrixCols=\count123
 \dotsspace@=\muskip10
-\c@parentequation=\count101
-\dspbrk@lvl=\count102
-\tag@help=\toks16
-\row@=\count103
-\column@=\count104
-\maxfields@=\count105
-\andhelp@=\toks17
-\eqnshift@=\dimen129
-\alignsep@=\dimen130
-\tagshift@=\dimen131
-\tagwidth@=\dimen132
-\totwidth@=\dimen133
-\lineht@=\dimen134
-\@envbody=\toks18
-\multlinegap=\skip45
-\multlinetaggap=\skip46
-\mathdisplay@stack=\toks19
+\c@parentequation=\count124
+\dspbrk@lvl=\count125
+\tag@help=\toks21
+\row@=\count126
+\column@=\count127
+\maxfields@=\count128
+\andhelp@=\toks22
+\eqnshift@=\dimen141
+\alignsep@=\dimen142
+\tagshift@=\dimen143
+\tagwidth@=\dimen144
+\totwidth@=\dimen145
+\lineht@=\dimen146
+\@envbody=\toks23
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
@@ -192,16 +283,12 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks20
-)
-\c@ALC@unique=\count106
-\c@ALC@line=\count107
-\c@ALC@rem=\count108
-\c@ALC@depth=\count109
-\ALC@tlm=\skip47
-\algorithmicindent=\skip48
+\c@ALC@unique=\count129
+\c@ALC@line=\count130
+\c@ALC@rem=\count131
+\c@ALC@depth=\count132
+\ALC@tlm=\skip52
+\algorithmicindent=\skip53
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -220,8 +307,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen135
-\Gin@req@width=\dimen136
+\Gin@req@height=\dimen147
+\Gin@req@width=\dimen148
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
@@ -304,43 +391,110 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
-) (./Paper.aux)
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
+ (./Paper.aux
+
+LaTeX Warning: Label `fig:subfig1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subfig1' multiply defined.
+
+
+LaTeX Warning: Label `fig:subfig2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subfig2' multiply defined.
+
+
+LaTeX Warning: Label `fig:globfig' multiply defined.
+
+
+LaTeX Warning: Label `fig:subfig1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subfig1' multiply defined.
+
+
+LaTeX Warning: Label `fig:subfig2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subfig2' multiply defined.
+
+
+LaTeX Warning: Label `fig:globfig' multiply defined.
+
+
+LaTeX Warning: Label `fig:subfig1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subfig1' multiply defined.
+
+
+LaTeX Warning: Label `fig:subfig2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subfig2' multiply defined.
+
+
+LaTeX Warning: Label `fig:globfig' multiply defined.
+
+
+LaTeX Warning: Label `fig:subfig1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subfig1' multiply defined.
+
+
+LaTeX Warning: Label `fig:subfig2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subfig2' multiply defined.
+
+
+LaTeX Warning: Label `fig:globfig' multiply defined.
+
+)
 \openout1 = `Paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 13.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 17.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    ... okay on input line 17.
 
 -- Lines per column: 56 (exact).
+\c@lstlisting=\count133
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
-\scratchdimen=\dimen137
-\scratchbox=\box30
-\nofMPsegments=\count111
-\nofMParguments=\count112
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count113
-\MPscratchDim=\dimen138
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count134
+\scratchdimen=\dimen149
+\scratchbox=\box34
+\nofMPsegments=\count135
+\nofMParguments=\count136
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count137
+\MPscratchDim=\dimen150
+\MPnumerator=\count138
+\makeMPintoPDFobject=\count139
+\everyMPtoPDFconversion=\toks26
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -397,19 +551,148 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 64.
+LaTeX Font Info:    Try loading font information for U+msa on input line 68.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 64.
+LaTeX Font Info:    Try loading font information for U+msb on input line 68.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
- (./Paper.bbl)
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 68.
+
+
+LaTeX Warning: Citation `b1' on page 1 undefined on input line 93.
+
+
+LaTeX Warning: Citation `b2' on page 1 undefined on input line 98.
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+Underfull \hbox (badness 5359) in paragraph at lines 103--109
+\OT1/ptm/m/n/10 The seed gen-er-a-tion method we chose de-rives from
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 103--109
+\OT1/ptm/m/n/10 the con-cept of us-ing the sys-tem time as an el-e-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
+\OT1/ptm/m/n/10 for seed gen-er-a-tion. The spe-cific im-ple-men-ta-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
+\OT1/ptm/m/n/10 we chose took in-spi-ra-tion from Mi-crosoft's .NET
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
+\OT1/ptm/m/n/10 us/dotnet/api/system.datetime.ticks?view=netframework-4.8].
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
+\OT1/ptm/m/n/10 We used a fairly sim-i-lar Python port
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
+\OT1/ptm/m/n/10 (https://stackoverflow.com/questions/29366914/what-is-
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 111.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Underfull \hbox (badness 4505) in paragraph at lines 125--126
+\OT1/ptm/m/n/10 and test ex-per-i-men-tal out-comes. While not the most
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 127--128
+[]\OT1/ptm/m/n/10 The orig-i-nal idea was to feed each PRNG dif-fer-ent
+ []
+
+
+Underfull \hbox (badness 2478) in paragraph at lines 127--128
+\OT1/ptm/m/n/10 re-quire-ments, so we cre-ated a sep-a-rate seed gen-er-a-tor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+ []
+
+<./Images/Middle_Square_Reg.png, id=11, 433.62pt x 289.08pt>
+File: ./Images/Middle_Square_Reg.png Graphic file (type png)
+<use ./Images/Middle_Square_Reg.png>
+Package pdftex.def Info: ./Images/Middle_Square_Reg.png  used on input line 139
+.
+(pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
+<./Images/Middle_Square_Loss.png, id=13, 433.62pt x 289.08pt>
+File: ./Images/Middle_Square_Loss.png Graphic file (type png)
+<use ./Images/Middle_Square_Loss.png>
+Package pdftex.def Info: ./Images/Middle_Square_Loss.png  used on input line 14
+3.
+(pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
+<./Images/Linear_Cong_Reg.png, id=14, 433.62pt x 289.08pt>
+File: ./Images/Linear_Cong_Reg.png Graphic file (type png)
+<use ./Images/Linear_Cong_Reg.png>
+Package pdftex.def Info: ./Images/Linear_Cong_Reg.png  used on input line 152.
+(pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
+<./Images/Linear_Cong_Loss.png, id=15, 433.62pt x 289.08pt>
+File: ./Images/Linear_Cong_Loss.png Graphic file (type png)
+<use ./Images/Linear_Cong_Loss.png>
+Package pdftex.def Info: ./Images/Linear_Cong_Loss.png  used on input line 156.
+
+(pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
+<./Images/Lagged_Fib_Reg.png, id=16, 433.62pt x 289.08pt>
+File: ./Images/Lagged_Fib_Reg.png Graphic file (type png)
+<use ./Images/Lagged_Fib_Reg.png>
+Package pdftex.def Info: ./Images/Lagged_Fib_Reg.png  used on input line 165.
+(pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
+<./Images/Lagged_Fib_Loss.png, id=17, 433.62pt x 289.08pt>
+File: ./Images/Lagged_Fib_Loss.png Graphic file (type png)
+<use ./Images/Lagged_Fib_Loss.png>
+Package pdftex.def Info: ./Images/Lagged_Fib_Loss.png  used on input line 169.
+(pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
+<./Images/Park_Miller_Reg.png, id=18, 433.62pt x 289.08pt>
+File: ./Images/Park_Miller_Reg.png Graphic file (type png)
+<use ./Images/Park_Miller_Reg.png>
+Package pdftex.def Info: ./Images/Park_Miller_Reg.png  used on input line 178.
+(pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
+<./Images/Park_Miller_Loss.png, id=19, 433.62pt x 289.08pt>
+File: ./Images/Park_Miller_Loss.png Graphic file (type png)
+<use ./Images/Park_Miller_Loss.png>
+Package pdftex.def Info: ./Images/Park_Miller_Loss.png  used on input line 182.
+
+(pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
+<./Images/Twister_Reg.png, id=20, 433.62pt x 289.08pt>
+File: ./Images/Twister_Reg.png Graphic file (type png)
+<use ./Images/Twister_Reg.png>
+Package pdftex.def Info: ./Images/Twister_Reg.png  used on input line 191.
+(pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
+<./Images/Twister_Loss.png, id=21, 433.62pt x 289.08pt>
+File: ./Images/Twister_Loss.png Graphic file (type png)
+<use ./Images/Twister_Loss.png>
+Package pdftex.def Info: ./Images/Twister_Loss.png  used on input line 195.
+(pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -421,28 +704,35 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+[2 <./Images/Middle_Square_Reg.png> <./Images/Middle_Square_Loss.png> <./Images
+/Linear_Cong_Reg.png> <./Images/Linear_Cong_Loss.png> <./Images/Lagged_Fib_Reg.
+png> <./Images/Lagged_Fib_Loss.png> <./Images/Park_Miller_Reg.png> <./Images/Pa
+rk_Miller_Loss.png> <./Images/Twister_Reg.png> <./Images/Twister_Loss.png>]
+(./Paper.aux)
+
+LaTeX Warning: There were undefined references.
 
 
+LaTeX Warning: There were multiply-defined labels.
 
-] (./Paper.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 3878 strings out of 494847
- 57594 string characters out of 6179080
- 115434 words of memory out of 5000000
- 7145 multiletter control sequences out of 15000+600000
- 39516 words of font info for 80 fonts, out of 8000000 for 9000
+ 6970 strings out of 494847
+ 105688 string characters out of 6179080
+ 201674 words of memory out of 5000000
+ 10184 multiletter control sequences out of 15000+600000
+ 40855 words of font info for 86 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 41i,7n,26p,272b,242s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</u
-sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
-times/utmri8a.pfb>
-Output written on Paper.pdf (1 page, 53379 bytes).
+ 41i,9n,49p,1047b,1265s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
+utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Paper.pdf (2 pages, 361448 bytes).
 PDF statistics:
- 25 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 53 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
