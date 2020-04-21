@@ -131,7 +131,8 @@ You might ask: won't different seed generators introduce flaws or bias in the ex
 
 \subsection{PRNG Implementations}
 \subsection{Predictive Network}
-The predictor is a convolutional neural network implementing the function
+NOTE THE Equation will have to be re-done and diagrams re-drawn to reflect our experiment.
+The predictor is a convolutional neural network implementing the function ...
 : $P(r_{split}) \mathbb{B}$ 7→B(7)wherersplitis  the  generator’s  output  vector  with  the  last  element  removed.The  last  element  is  used  as  the  corresponding  label  for  the  predictor’s  input.
 \begin{figure}[H]
 \centering
@@ -143,7 +144,15 @@ The predictor is a convolutional neural network implementing the function
 \subsection{Experimental Setup}
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\linewidth]{./Images/ModelDiagram.png}
+\includegraphics[width=1\linewidth]{./Images/SimpleModel.png}
+\caption{Experiment Model}
+\label{fig:globfig}
+\end{figure}
+
+\subsection{Experimental Setup}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{./Images/GranularModel.png}
 \caption{Experiment Model}
 \label{fig:globfig}
 \end{figure}
