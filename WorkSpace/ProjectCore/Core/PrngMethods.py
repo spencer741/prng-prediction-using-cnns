@@ -6,8 +6,9 @@ This file contains all of the PRNG methods used in this experiment.
         Done  [Middle-square method (1946)](https://en.wikipedia.org/wiki/Middle-square_method)
         Done  [Linear congruential generator (1958)](https://en.wikipedia.org/wiki/Linear_congruential_generator)
         Done  [Lagged Fibonacci (1965)](https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator)
-        Done  [Mersenne Twister (1998)](https://en.wikipedia.org/wiki/Mersenne_Twister)
         Done  [Park-Miller (1988)](https://en.wikipedia.org/wiki/Lehmer_random_number_generator)
+        Done  [Mersenne Twister (1998)](https://en.wikipedia.org/wiki/Mersenne_Twister)
+        
 
     Note that many of the notes in the below comments are mostly indirectly or directly referenced to the wiki pages. 
 
@@ -157,26 +158,6 @@ def Lagged_Fibonacci(seed, listlength, j=7 , k=10):
                     seedlist[i] = val
     return numlist
 
-
-'''
-<Mersenne_Twister finished=true/>
-<notes>
-    Closely related with LFSRs. In its MT19937 implementation is probably the most commonly used modern PRNG. 
-    Default generator in the Python language starting from version 2.3. 
-    
-    We used numpy's version of the Mersenne Twister.
-</notes>
-'''
-def Mersenne_Twister(seed, listlength):
-    numlist = []
-    np.random.seed(seed)
-    # numpy uses Mersenne Twister Algorithm
-    for i in range(listlength):
-        numlist.append(np.random.RandomState().randint(seed))
-        
-    return numlist
-    
-    
 '''
 <Park-Miller finished=true/>
 <notes>
@@ -214,6 +195,27 @@ def Park_Miller(seed, listlength):
         numlist.append(seed)
 
     return numlist
+
+'''
+<Mersenne_Twister finished=true/>
+<notes>
+    Closely related with LFSRs. In its MT19937 implementation is probably the most commonly used modern PRNG. 
+    Default generator in the Python language starting from version 2.3. 
+    
+    We used numpy's version of the Mersenne Twister.
+</notes>
+'''
+def Mersenne_Twister(seed, listlength):
+    numlist = []
+    np.random.seed(seed)
+    # numpy uses Mersenne Twister Algorithm
+    for i in range(listlength):
+        numlist.append(np.random.RandomState().randint(seed))
+        
+    return numlist
+    
+    
+
 
 
     
