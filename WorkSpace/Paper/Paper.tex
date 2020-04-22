@@ -14,6 +14,7 @@
 \usepackage{textcomp}
 \usepackage{hyperref}
 \usepackage{url}
+\usepackage{amsmath}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -91,70 +92,87 @@ component, formatting, style, styling, insert
 % INTRODUCTION SECTION
 \section{Introduction}
 
-Start typing here \cite{b1}.
 
 % BACKGROUND SECTION
 \section{Background}
 
-Start typing here \cite{b2}.
 
 % METHODS SECTION
 \section{Methods}
 \subsection{Seeding Method}
-We went with a seed generation method that allowed a way to introduce some minor level of entropy to avoid letting the neural network aimlessly swim through the entropy of a strong seed instead of gaining stochastic insight on the data from the PRNG. \newline
-The seed generation method we chose derives from the concept of using the system time as an element for seed generation. The specific implementation we chose took inspiration from Microsoft's .NET system.datetime.ticks property. \cite{b1} We chose to single out this method due to its documentation and unqiue simplicity. System time is widely used as a parameter for modern seed generation methods. To put it more trivially: "a pseudo random number generator is a deterministic algorithm that, given an initial number (called seed), generates a sequence of numbers that adequately satisfies statistical randomness tests. Since the algorithm is deterministic, the algorithm will always generate the exact same sequence of numbers if it's initialized with the same seed. That's why system time (something that changes all the time) is usually used as the seed for random number generators." \cite{b2} \newline
-According to the Microsoft documentation, "A single tick represents one hundred nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond, or 10 million ticks in a second. The value of this property represents the number of 100-nanosecond intervals that have elapsed since 12:00:00 midnight, January 1, 0001 in the Gregorian calendar." \cite{b1}  \newline
-We used a fairly similar Python port, explained below. \cite{b3}
-\lstset{language=Python}
-\begin{lstlisting}[breaklines=true]
-def ticks(dt):
-    return (dt-datetime(1,1,1)).total_seconds()*10000000
-\end{lstlisting} 
+We went with a seed generation method that allowed a way to introduce some minor level of entropy to avoid letting the neural network aimlessly swim through the entropy of a strong seed instead of gaining stochastic insight on the data from the PRNG.
 
-Porting side effects include:
+The seed generation method we chose derives from the concept of using the system time as an element for seed generation. The specific implementation we chose took inspiration from Microsoft's .NET system.datetime.ticks property. \cite{msoftdocs} We chose to single out this method due to its documentation and unique simplicity. System time is widely used as a parameter for modern seed generation methods. 
+
+To put it more trivially: "a pseudo-random number generator is a deterministic algorithm that, given an initial number (called a seed), generates a sequence of numbers that adequately satisfy statistical randomness tests. Since the algorithm is deterministic, the algorithm will always generate the exact same sequence of numbers if it's initialized with the same seed. That's why system time (something that changes all the time) is usually used as the seed for random number generators." \cite{pseudoquote}
+
+According to the Microsoft documentation, "A single tick represents one hundred nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond, or 10 million ticks in a second. The value of this property represents the number of 100-nanosecond intervals that have elapsed since 12:00:00 midnight, January 1, 0001 in the Gregorian calendar." \cite{msoftdocs}
+
+We used a fairly similar Python port, as seen in Figure ~\ref{fig:Default Seeding Method}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{./Images/Ticks.png}
+\caption{Default Seeding Method}
+\label{fig:Default Seeding Method}
+\end{figure}
+
+This python port of Microsoft's tick method can be attributed to "mhawke" on StackOverflow. \cite{tickport} The author had some noteworthy comments about this implementation, namely some porting side effects:
 \begin{enumerate}
     \item UTC times are assumed.
-    \item The resolution of the datetime object is given by datetime.resolution, which is datetime.timedelta(0, 0, 1) or microsecond resolution (1e-06 seconds). CSharp Ticks are purported to be 1e-07 seconds.
+    \item The resolution of the DateTime object is given by DateTime.resolution, which is DateTime.timedelta(0, 0, 1) or microsecond resolution (1e-06 seconds). CSharp Ticks are purported to be 1e-07 seconds.
 \end{enumerate}
 
-Additional changes we made to our implementation:
+For experimental needs, we made additional changes to the implementation:
 \begin{enumerate}
     \item Changing start time from January 1, 0001 to January 1, 1970, which effectively reduced the length of the seed for experimental purposes.
-    \item Slicing last 6 digits of the ticks result to acquire more digit variation for frequent invocation.
+    \item Slicing the last 6 digits of the ticks result to acquire more digit variation for frequent invocation.
 \end{enumerate}
 
-This final method allows enough spread between frequently retreived ticks, where we are assuming reasonable pseudo-unpredictabililty. This serves as a simplistic but constantly changing control mechanism for being able to seed PRNGs and test experimental outcomes. While not the most cryptographically strong, we needed a way to have some controlled aspect of seed generation to feed into generators of varying cryptographic complexity (to have some baseline of comparison).\newline
+The final modified method allows enough spread between frequently retrieved ticks, where we are assuming reasonable pseudo-unpredictability. This serves as a simplistic but constantly changing control mechanism for being able to seed PRNGs and test experimental outcomes. While not the most cryptographically strong, we needed a way to have some controlled aspect of seed generation to feed into generators of varying cryptographic complexity (to have some baseline of comparison).
 
-The original idea was to feed each PRNG different seeds from the same seed generator; however, many PRNG algorithms impose strict seed requirements to pass tests of randomness. Out of the five PRNG methods we implemented, Lagged Fibonacci was the only one that had special seed requirements, so we created a separate seed generator based on the same fundamental ticks generation method, but modified to meet the restrictions. Other PRNGs not implemented in this research that impose seed restrictions include Wichmann-Hill (which accepts three different seeds) and Maximally Periodic Reciprocals (which requires a Sophie Prime), among others.\newline
+The original idea was to feed each PRNG different seeds from the same seed generator; however, many PRNG algorithms impose strict seed requirements to pass tests of randomness. Out of the five PRNG methods we implemented, Lagged Fibonacci was the only one that had special seed requirements, so we created a separate seed generator based on the same fundamental ticks generation method, but modified to meet the restrictions. Other PRNGs not implemented in this research that impose seed restrictions include Wichmann-Hill (which accepts three different seeds) and Maximally Periodic Reciprocals (which requires a Sophie Prime), among others.
 
-You might ask: won't different seed generators introduce flaws or bias in the experiment? Well, it depends on what you are testing. In our case, we are strictly testing the "complexity" of the generator itself, so supplying a seed that is not blatantly predictable but also not unpredictable was sufficient. Our goal was to allow the charactaristics of the generator to be exposed, for we were cracking the "complexity" of the generation algorithm, not the complexity of an arbitrary seed.
+You might ask: won't different seed generators introduce flaws or bias in the experiment? Well, it depends on what you are testing. In our case, we are strictly testing the "complexity" of the generator itself, so supplying a seed that is not blatantly predictable but also not unpredictable was sufficient. Our goal was to allow the characteristics of the generator to be exposed, for we were cracking the "complexity" of the generation algorithm, not the complexity of an arbitrary seed.
 
 \subsection{PRNG Implementations}
-\subsection{Predictive Network}
-NOTE THE Equation will have to be re-done and diagrams re-drawn to reflect our experiment.
-The predictor is a convolutional neural network implementing the function ...
-: $P(r_{split}) \mathbb{B}$ 7→B(7)wherersplitis  the  generator’s  output  vector  with  the  last  element  removed.The  last  element  is  used  as  the  corresponding  label  for  the  predictor’s  input.
+
+\subsection{Experimental Setup}
+
+The mathematical description of our experiment can be outlined below. 
+\begin{equation}
+\{0, G(S_n, k) \rightarrow \mathbb{L}_n \rightarrow Split(\mathbb{L}_n) \rightarrow \mathbb{X}_n,\mathbb{Y}_n , n \}
+\end{equation}
+Where the outer set builder notation iterates the following from 0 to n:
+Where $G$ is the chosen PRNG, $S_n$ is nth seed in the iteration, and $k$ is the length of the desired output vector, $\mathbb{L}_n$, it is implied that $\mathbb{L}_n$ is the output vector of $G$ and $\mathbb{X}_n$ is $\mathbb{L}_n$ with the last element removed. $\mathbb{Y}_n$  is  used  as  the  corresponding  label for $\mathbb{X}_n$.
+
+The predictor is a convolutional neural network implementing the function...
+\begin{equation}
+P(\mathbb{X},\mathbb{Y}): \mathbb{X} \rightarrow \mathbb{B} \simeq \mathbb{Y}
+\end{equation}
+Where $\mathbb{X}_n$ represents a set containing $n$ sets of $k-1$ values generated from a PRNG where each $\mathbb{X}_n$ set is dervied from a different seed. $\mathbb{Y}_n$ represents a set containing $n$ sets of $kth$ values with a direct mapping to each $\mathbb{X}_n$ such that $\mathbb{X}_n \rightarrow \mathbb{Y}_n$. $P$, the predictive neural network, takes in $\mathbb{X}_n$ and $\mathbb{Y}_n$, yields a new set $\mathbb{B}_n$ implied from $\mathbb{X}_n$, where the model trains $\mathbb{B}_n$ to be similar or equal to $\mathbb{Y}_n$ based on the back-propagation due to previous predictions. 
+
+For a simplified graphical representation of the latter description, please reference the predictive model in Figure ~\ref{fig:Predictive Model}, the simplified experimental model in Figure ~\ref{fig:Simplified Experimental Model} , and the granular view of the experimental model in Figure ~\ref{fig:Granular Experimental Model}.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\linewidth]{./Images/PredictiveModel.png}
 \caption{Predictive Model}
-\label{fig:globfig}
+\label{fig:Predictive Model}
 \end{figure}
 
-\subsection{Experimental Setup}
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\linewidth]{./Images/SimpleModel.png}
 \caption{Simplified Experimental Model}
-\label{fig:globfig}
+\label{fig:Simplified Experimental Model}
 \end{figure}
 
-\subsection{Experimental Setup}
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\linewidth]{./Images/GranularModel.png}
 \caption{Granular Experimental Model}
-\label{fig:globfig}
+\label{fig:Granular Experimental Model}
 \end{figure}
 
 
@@ -165,65 +183,65 @@ The predictor is a convolutional neural network implementing the function ...
 \centering
 \subfloat[Subfigure 1 list of figures text][Testing Regression Plot]{
 \includegraphics[width=0.4\linewidth]{./Images/Middle_Square_Reg.png}
-\label{fig:subfig1}}
+\label{fig:MS_A}}
 \qquad
 \subfloat[Subfigure 2 list of figures text][Training Loss Plot]{
 \includegraphics[width=0.4\linewidth]{./Images/Middle_Square_Loss.png}
-\label{fig:subfig2}}
+\label{fig:MS_B}}
 \caption{Middle Square Results}
-\label{fig:globfig}
+\label{fig:MS}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \subfloat[Subfigure 1 list of figures text][Testing Regression Plot]{
 \includegraphics[width=0.4\linewidth]{./Images/Linear_Cong_Reg.png}
-\label{fig:subfig1}}
+\label{fig:LCG_A}}
 \qquad
 \subfloat[Subfigure 2 list of figures text][Training Loss Plot]{
 \includegraphics[width=0.4\linewidth]{./Images/Linear_Cong_Loss.png}
-\label{fig:subfig2}}
+\label{fig:LCG_B}}
 \caption{Linear Congruential Results}
-\label{fig:globfig}
+\label{fig:LCG}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \subfloat[Subfigure 1 list of figures text][Testing Regression Plot]{
 \includegraphics[width=0.4\linewidth]{./Images/Lagged_Fib_Reg.png}
-\label{fig:subfig1}}
+\label{fig:LF_A}}
 \qquad
 \subfloat[Subfigure 2 list of figures text][Training Loss Plot]{
 \includegraphics[width=0.4\linewidth]{./Images/Lagged_Fib_Loss.png}
-\label{fig:subfig2}}
+\label{fig:LF_B}}
 \caption{Lagged Fibonacci Results}
-\label{fig:globfig}
+\label{fig:LF}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \subfloat[Subfigure 1 list of figures text][Testing Regression Plot]{
 \includegraphics[width=0.4\linewidth]{./Images/Park_Miller_Reg.png}
-\label{fig:subfig1}}
+\label{fig:PM_A}}
 \qquad
 \subfloat[Subfigure 2 list of figures text][Training Loss Plot]{
 \includegraphics[width=0.4\linewidth]{./Images/Park_Miller_Loss.png}
-\label{fig:subfig2}}
+\label{fig:PM_B}}
 \caption{Park Miller Results}
-\label{fig:globfig}
+\label{fig:PM}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \subfloat[Subfigure 1 list of figures text][Testing Regression Plot]{
 \includegraphics[width=0.4\linewidth]{./Images/Twister_Reg.png}
-\label{fig:subfig1}}
+\label{fig:MT_A}}
 \qquad
 \subfloat[Subfigure 2 list of figures text][Training Loss Plot]{
 \includegraphics[width=0.4\linewidth]{./Images/Twister_Loss.png}
-\label{fig:subfig2}}
+\label{fig:MT_B}}
 \caption{Mersenne Twister Results}
-\label{fig:globfig}
+\label{fig:MT}
 \end{figure}
 
 % DISCUSSION SECTION
