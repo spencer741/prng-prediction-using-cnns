@@ -136,6 +136,37 @@ The original idea was to feed each PRNG different seeds from the same seed gener
 You might ask: won't different seed generators introduce flaws or bias in the experiment? Well, it depends on what you are testing. In our case, we are strictly testing the "complexity" of the generator itself, so supplying a seed that is not blatantly predictable but also not unpredictable was sufficient. Our goal was to allow the characteristics of the generator to be exposed, for we were cracking the "complexity" of the generation algorithm, not the complexity of an arbitrary seed.
 
 \subsection{PRNG Implementations}
+For the experiment, we chose five PRNG methods by year of invention. We attempted to choose PRNG methods that displayed popularity in the world of pseudo random number generation while making sure the year of invention was reasonably distributed among the group. Choosing five PRNGs allowed us to focus on implementations, while leaving future research opportunities open for working with other PRNGs that we did not cover.
+
+Chosen PRNGs:
+\begin{itemize}
+  \item Middle-square method (1946)
+  \item Linear congruential generator (1958)
+  \item Lagged Fibonacci (1965)
+  \item Park-Miller (1988)
+  \item Mersenne Twister (1998)
+\end{itemize}
+
+The call definition of any given PRNG function is as follows:
+\begin{lstlisting}
+PRNGfunc(seed, n) 
+\end{lstlisting}
+This is so we can experimentally automate the calling of each PRNG without getting too complex.
+The given PRNG function should return a list of n generated numbers using the generation method.
+All other parameters outside of the seed and n are default values.
+
+For example, if the call was PRNG(seed, 10),
+it might return something like
+[3,5,10,1,31,17,2,4,6,7]
+
+We control parsing the n-length list and handling seeds externally. 
+This plays logically with separation of concerns for our usecase.
+
+While python generators can be useful iterating over previously generated iterables,
+we did not want to clutter our experimental execution code, so we stuck to a classical
+internal handling of all iterations.
+
+Below are short descriptions of each PRNG and any implementation notes made during the developement process.
 Middle Square:
 Description:
 ...
@@ -213,11 +244,13 @@ We used numpy's version of the Mersenne Twister.
 
 The following is a vastly informal mathematical representation of our experimental model, using a loose coupling of TLA+ notation and some set-builder theory. Further explanations and graphics will follow to aide in interpretation of the design of the experimental setup.
 
+\begin{displayquote}
 Let $n$ be any arbitrary natural number such that $\{n \in \mathbb{N}\}$.
 Let $E$ represent the experiment definition.
 Let $seed$ be a function such that when called will return a seed.
 Given $k$ and $S_n$, let $prng$ be a function such that when called will return a set of pseudo random numbers,
 dervied from an initial seed $S_n$ and a given algorithm, where the length of the set is $k$.
+\end{displayquote}
 
 \begin{figure}[H]
 \centering
@@ -227,18 +260,12 @@ dervied from an initial seed $S_n$ and a given algorithm, where the length of th
 \end{figure}
 
 
-Given an enumerated set, $\mathbb{N}$:
-Where $prng$ is the chosen PRNG, $S_n$ is nth seed in the iteration, and $k$ is the length of the desired output vector ($\mathbb{L}_n$) of $prng$. 
-$\mathbb{X}_n$ represents a set containing $n$ sets of $k-1$ values generated from a PRNG ($prng$) and each $\mathbb{X}_n$ set is dervied from a different seed. $\mathbb{Y}_n$ represents a set containing $n$ sets of $k$th values with a direct mapping to each $\mathbb{X}_n$ such that $\mathbb{X}_n \mapsto \mathbb{Y}_n$. $P$ a predictor function that represents a convolutional neural network, which takes in $\mathbb{X}_n$ and $\mathbb{Y}_n$, yields a new set $\mathbb{B}_n$ implied from $\mathbb{X}_n$, where the model trains $\mathbb{B}_n$ to be similar or equal to $\mathbb{Y}_n$ based on back-propagation due to previous predictions, thus using supervised learning to build a regression model.
+Given an enumerated set, $\mathbb{N}$,
+where $prng$ is the chosen PRNG, $S_n$ is nth seed in the iteration, and $k$ is the length of the desired output vector ($\mathbb{L}_n$) of $prng$,
+$\mathbb{X}_n$ represents an enumerated set containing $n$ sets of $k-1$ values generated from a PRNG ($prng$) and each $\mathbb{X}_n$ set is dervied from a different seed. $\mathbb{Y}_n$ represents a set containing $n$ sets of $k$th values with a direct mapping to each $\mathbb{X}_n$ such that $\mathbb{X}_n \mapsto \mathbb{Y}_n$. $P$ a predictor function that represents a convolutional neural network, which takes in $\mathbb{X}_n$ and $\mathbb{Y}_n$, yields a new set $\mathbb{B}_n$ implied from $\mathbb{X}_n$, where the model trains $\mathbb{B}_n$ to be similar or equal to $\mathbb{Y}_n$ based on back-propagation due to previous predictions, thus using supervised learning to build a regression model.
 
 For a simplified graphical representation of the latter description, please reference the predictive model in Figure ~\ref{fig:Predictive Model}, the simplified experimental model in Figure ~\ref{fig:Simplified Experimental Model} , and the granular view of the experimental model in Figure ~\ref{fig:Granular Experimental Model}.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=1\linewidth]{./Images/PredictiveModel.png}
-\caption{Predictive Model}
-\label{fig:Predictive Model}
-\end{figure}
 
 \begin{figure}[H]
 \centering
@@ -247,12 +274,28 @@ For a simplified graphical representation of the latter description, please refe
 \label{fig:Simplified Experimental Model}
 \end{figure}
 
+Referencing Figure ~\ref{fig:Simplified Experimental Model}, which is a visualization of what a 1-dimensional architecture of our experiment might entail, the predictive neural net as visualized in Figure ~\ref{fig:Predictive Model} is fed outputs of a specific PRNG, which will attempt to predict an kth value, based on previous k-1 values in a particular set of input data, where each set is generated based off of a single unique seed. After being trained on, ideally thousands of sets, the predictive network will form a better stochastic "understanding" of how the PRNG works underneath, thus being able to more accurately predict numbers generated from that PRNG in the future (i.e.,a supervised regression model). The backpropagation will flow through the predictive network to acheive the adversarial nature of a traditional GAN setup, but in reality, we won't be using a generative network, but rather a PRNG algorithm, so the generative part of our setup won't be defensive.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{./Images/PredictiveModel.png}
+\caption{Predictive Model}
+\label{fig:Predictive Model}
+\end{figure}
+
+Referencing Figure ~\ref{fig:Predictive Model}, which is a visualization of the layer stack we used for the predictive network in each trial of the experiment, it "consists of four stacked convolutional layers, each with 4 filters, kernel size 2, and stride 1, followed by a max pooling layer and two FCFFlayers with 4 and 1 units, respectively. The stack of convolutional layers allow the network to discover complex patterns in the input." [https://arxiv.org/pdf/1810.00378.pdf] Explain here how/why we used that research's dicriminator model in our experiment exactly, except we implemented Relus instead of leaky-relus. Talk about the input xdata and ydata shape and reference the granular model Figure ~\ref{fig:Granular Experimental Model} for detail on how these data are aggregated.
+
+
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\linewidth]{./Images/GranularModel.png}
 \caption{Granular Experimental Model}
 \label{fig:Granular Experimental Model}
 \end{figure}
+
+Talk generally about the data aggregation process, just walk through it.
 
 \subsection{Experimental Execution}
 Highlight configuration parameters used to execute the experiment.
