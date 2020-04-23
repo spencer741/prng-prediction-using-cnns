@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.10)  22 APR 2020 07:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.10)  22 APR 2020 16:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -629,87 +629,94 @@ Missing character: There is no   in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no ˆ in font ptmr7t!
 Missing character: There is no ’ in font ptmr7t!
-[2]
-<./Images/PredictiveModel.png, id=87, 1812.7725pt x 638.385pt>
+<./Images/ModelNotated.png, id=69, 1372.12625pt x 1083.04625pt>
+File: ./Images/ModelNotated.png Graphic file (type png)
+<use ./Images/ModelNotated.png>
+Package pdftex.def Info: ./Images/ModelNotated.png  used on input line 224.
+(pdftex.def)             Requested size: 126.0pt x 99.45306pt.
+[2 <./Images/ModelNotated.png>]
+<./Images/PredictiveModel.png, id=88, 1812.7725pt x 638.385pt>
 File: ./Images/PredictiveModel.png Graphic file (type png)
 <use ./Images/PredictiveModel.png>
-Package pdftex.def Info: ./Images/PredictiveModel.png  used on input line 230.
+Package pdftex.def Info: ./Images/PredictiveModel.png  used on input line 238.
 (pdftex.def)             Requested size: 252.0pt x 88.74011pt.
-<./Images/SimpleModel.png, id=88, 479.7925pt x 183.68625pt>
+<./Images/SimpleModel.png, id=89, 479.7925pt x 183.68625pt>
 File: ./Images/SimpleModel.png Graphic file (type png)
 <use ./Images/SimpleModel.png>
-Package pdftex.def Info: ./Images/SimpleModel.png  used on input line 237.
+Package pdftex.def Info: ./Images/SimpleModel.png  used on input line 245.
 (pdftex.def)             Requested size: 252.0pt x 96.47874pt.
-<./Images/GranularModel.png, id=89, 532.99126pt x 336.25626pt>
+<./Images/GranularModel.png, id=90, 532.99126pt x 336.25626pt>
 File: ./Images/GranularModel.png Graphic file (type png)
 <use ./Images/GranularModel.png>
-Package pdftex.def Info: ./Images/GranularModel.png  used on input line 244.
+Package pdftex.def Info: ./Images/GranularModel.png  used on input line 252.
 (pdftex.def)             Requested size: 252.0pt x 158.98453pt.
-<./Images/Middle_Square_Reg.png, id=90, 433.62pt x 289.08pt>
+<./Images/Middle_Square_Reg.png, id=91, 433.62pt x 289.08pt>
 File: ./Images/Middle_Square_Reg.png Graphic file (type png)
 <use ./Images/Middle_Square_Reg.png>
-Package pdftex.def Info: ./Images/Middle_Square_Reg.png  used on input line 259
+Package pdftex.def Info: ./Images/Middle_Square_Reg.png  used on input line 269
 .
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Middle_Square_Loss.png, id=91, 433.62pt x 289.08pt>
+<./Images/Middle_Square_Loss.png, id=92, 433.62pt x 289.08pt>
 File: ./Images/Middle_Square_Loss.png Graphic file (type png)
 <use ./Images/Middle_Square_Loss.png>
-Package pdftex.def Info: ./Images/Middle_Square_Loss.png  used on input line 26
+Package pdftex.def Info: ./Images/Middle_Square_Loss.png  used on input line 27
 3.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Linear_Cong_Reg.png, id=92, 433.62pt x 289.08pt>
+<./Images/Linear_Cong_Reg.png, id=93, 433.62pt x 289.08pt>
 File: ./Images/Linear_Cong_Reg.png Graphic file (type png)
 <use ./Images/Linear_Cong_Reg.png>
-Package pdftex.def Info: ./Images/Linear_Cong_Reg.png  used on input line 272.
+Package pdftex.def Info: ./Images/Linear_Cong_Reg.png  used on input line 282.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Linear_Cong_Loss.png, id=93, 433.62pt x 289.08pt>
+<./Images/Linear_Cong_Loss.png, id=94, 433.62pt x 289.08pt>
 File: ./Images/Linear_Cong_Loss.png Graphic file (type png)
 <use ./Images/Linear_Cong_Loss.png>
-Package pdftex.def Info: ./Images/Linear_Cong_Loss.png  used on input line 276.
+Package pdftex.def Info: ./Images/Linear_Cong_Loss.png  used on input line 286.
 
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Lagged_Fib_Reg.png, id=94, 433.62pt x 289.08pt>
+<./Images/Lagged_Fib_Reg.png, id=95, 433.62pt x 289.08pt>
 File: ./Images/Lagged_Fib_Reg.png Graphic file (type png)
 <use ./Images/Lagged_Fib_Reg.png>
-Package pdftex.def Info: ./Images/Lagged_Fib_Reg.png  used on input line 285.
+Package pdftex.def Info: ./Images/Lagged_Fib_Reg.png  used on input line 295.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Lagged_Fib_Loss.png, id=95, 433.62pt x 289.08pt>
+<./Images/Lagged_Fib_Loss.png, id=96, 433.62pt x 289.08pt>
 File: ./Images/Lagged_Fib_Loss.png Graphic file (type png)
 <use ./Images/Lagged_Fib_Loss.png>
-Package pdftex.def Info: ./Images/Lagged_Fib_Loss.png  used on input line 289.
+Package pdftex.def Info: ./Images/Lagged_Fib_Loss.png  used on input line 299.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Park_Miller_Reg.png, id=96, 433.62pt x 289.08pt>
+<./Images/Park_Miller_Reg.png, id=97, 433.62pt x 289.08pt>
 File: ./Images/Park_Miller_Reg.png Graphic file (type png)
 <use ./Images/Park_Miller_Reg.png>
-Package pdftex.def Info: ./Images/Park_Miller_Reg.png  used on input line 298.
+Package pdftex.def Info: ./Images/Park_Miller_Reg.png  used on input line 308.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Park_Miller_Loss.png, id=97, 433.62pt x 289.08pt>
+<./Images/Park_Miller_Loss.png, id=98, 433.62pt x 289.08pt>
 File: ./Images/Park_Miller_Loss.png Graphic file (type png)
 <use ./Images/Park_Miller_Loss.png>
-Package pdftex.def Info: ./Images/Park_Miller_Loss.png  used on input line 302.
+Package pdftex.def Info: ./Images/Park_Miller_Loss.png  used on input line 312.
 
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Twister_Reg.png, id=98, 433.62pt x 289.08pt>
+<./Images/Twister_Reg.png, id=99, 433.62pt x 289.08pt>
 File: ./Images/Twister_Reg.png Graphic file (type png)
 <use ./Images/Twister_Reg.png>
-Package pdftex.def Info: ./Images/Twister_Reg.png  used on input line 311.
+Package pdftex.def Info: ./Images/Twister_Reg.png  used on input line 321.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Twister_Loss.png, id=99, 433.62pt x 289.08pt>
+<./Images/Twister_Loss.png, id=100, 433.62pt x 289.08pt>
 File: ./Images/Twister_Loss.png Graphic file (type png)
 <use ./Images/Twister_Loss.png>
-Package pdftex.def Info: ./Images/Twister_Loss.png  used on input line 315.
+Package pdftex.def Info: ./Images/Twister_Loss.png  used on input line 325.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
- (./Paper.bbl
+
+Underfull \vbox (badness 2970) has occurred while \output is active []
+
+ [3 <./Images/PredictiveModel.png> <./Images/SimpleModel.png> <./Images/Granula
+rModel.png> <./Images/Middle_Square_Reg.png> <./Images/Middle_Square_Loss.png> 
+<./Images/Linear_Cong_Reg.png> <./Images/Linear_Cong_Loss.png> <./Images/Lagged
+_Fib_Reg.png> <./Images/Lagged_Fib_Loss.png> <./Images/Park_Miller_Reg.png> <./
+Images/Park_Miller_Loss.png>] (./Paper.bbl
 Underfull \hbox (badness 4660) in paragraph at lines 26--29
 []\OT1/ptm/m/n/8 Microsoft. Date-time.ticks prop-erty. [On-line]. Avail-
  []
 
-[3 <./Images/PredictiveModel.png> <./Images/SimpleModel.png> <./Images/Granular
-Model.png> <./Images/Middle_Square_Reg.png> <./Images/Middle_Square_Loss.png> <
-./Images/Linear_Cong_Reg.png> <./Images/Linear_Cong_Loss.png> <./Images/Lagged_
-Fib_Reg.png> <./Images/Lagged_Fib_Loss.png> <./Images/Park_Miller_Reg.png> <./I
-mages/Park_Miller_Loss.png> <./Images/Twister_Reg.png> <./Images/Twister_Loss.p
-ng>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 32--35
 []\OT1/ptm/m/n/8 M. Af-shari. Stack-over-flow com-ment. [On-line].
  []
@@ -738,25 +745,25 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 331.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 341.
 [4
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 331.
+ <./Images/Twister_Reg.png> <./Images/Twister_Loss.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 341.
  (./Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 331.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 331.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 341.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 341.
 Package rerunfilecheck Info: File `Paper.out' has not changed.
 (rerunfilecheck)             Checksum: C9052448A6B2347FD8A2D0BA1AB8A6CE;538.
  ) 
 Here is how much of TeX's memory you used:
- 10365 strings out of 494847
- 157781 string characters out of 6179080
- 257071 words of memory out of 5000000
- 13516 multiletter control sequences out of 15000+600000
+ 10369 strings out of 494847
+ 157920 string characters out of 6179080
+ 258129 words of memory out of 5000000
+ 13520 multiletter control sequences out of 15000+600000
  41484 words of font info for 91 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 36i,9n,49p,812b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,9n,49p,812b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
@@ -767,10 +774,10 @@ sfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Paper.pdf (4 pages, 511296 bytes).
+Output written on Paper.pdf (4 pages, 569547 bytes).
 PDF statistics:
  193 PDF objects out of 1000 (max. 8388607)
- 147 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 145 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
