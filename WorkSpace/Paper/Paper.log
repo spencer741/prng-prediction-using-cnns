@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.10)  24 APR 2020 08:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.10)  25 APR 2020 04:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -596,101 +596,114 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 66.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 70.
-<./Images/Ticks.png, id=48, 596.2275pt x 52.69687pt>
-File: ./Images/Ticks.png Graphic file (type png)
-<use ./Images/Ticks.png>
-Package pdftex.def Info: ./Images/Ticks.png  used on input line 115.
-(pdftex.def)             Requested size: 252.0pt x 22.27243pt.
+Missing character: There is no ‚ in font ptmb7t!
+Missing character: There is no â in font ptmb7t!
+Missing character: There is no • in font ptmb7t!
+Missing character: There is no ‚ in font ptmb7t!
+Missing character: There is no Ä in font ptmb7t!
+Missing character: There is no ô in font ptmb7t!
+Missing character: There is no ‚ in font ptmb7t!
+Missing character: There is no Ä in font ptmb7t!
+Missing character: There is no ù in font ptmb7t!
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./Images/Ticks.png>]
+]
+<./Images/Ticks.png, id=58, 596.2275pt x 52.69687pt>
+File: ./Images/Ticks.png Graphic file (type png)
+<use ./Images/Ticks.png>
+Package pdftex.def Info: ./Images/Ticks.png  used on input line 127.
+(pdftex.def)             Requested size: 252.0pt x 22.27243pt.
+ [2 <./Images/Ticks.png>]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no † in font ptmr7t!
- [2]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no à in font ptmr7t!
 Missing character: There is no í in font ptmr7t!
-<./Images/ModelNotated.png, id=89, 1372.12625pt x 1083.04625pt>
+<./Images/ModelNotated.png, id=84, 1372.12625pt x 1083.04625pt>
 File: ./Images/ModelNotated.png Graphic file (type png)
 <use ./Images/ModelNotated.png>
-Package pdftex.def Info: ./Images/ModelNotated.png  used on input line 251.
+Package pdftex.def Info: ./Images/ModelNotated.png  used on input line 263.
 (pdftex.def)             Requested size: 126.0pt x 99.45306pt.
-<./Images/SimpleModel.png, id=93, 479.7925pt x 183.68625pt>
+<./Images/SimpleModel.png, id=88, 479.7925pt x 183.68625pt>
 File: ./Images/SimpleModel.png Graphic file (type png)
 <use ./Images/SimpleModel.png>
-Package pdftex.def Info: ./Images/SimpleModel.png  used on input line 266.
+Package pdftex.def Info: ./Images/SimpleModel.png  used on input line 278.
 (pdftex.def)             Requested size: 252.0pt x 96.47874pt.
-<./Images/PredictiveModel.png, id=96, 1812.7725pt x 638.385pt>
+ [3 <./Images/ModelNotated.png> <./Images/SimpleModel.png>]
+<./Images/PredictiveModel.png, id=113, 1812.7725pt x 638.385pt>
 File: ./Images/PredictiveModel.png Graphic file (type png)
 <use ./Images/PredictiveModel.png>
-Package pdftex.def Info: ./Images/PredictiveModel.png  used on input line 276.
+Package pdftex.def Info: ./Images/PredictiveModel.png  used on input line 288.
 (pdftex.def)             Requested size: 252.0pt x 88.74011pt.
- [3 <./Images/ModelNotated.png> <./Images/SimpleModel.png> <./Images/Predictive
-Model.png>]
-<./Images/GranularModel.png, id=118, 532.99126pt x 336.25626pt>
+<./Images/GranularModel.png, id=117, 532.99126pt x 336.25626pt>
 File: ./Images/GranularModel.png Graphic file (type png)
 <use ./Images/GranularModel.png>
-Package pdftex.def Info: ./Images/GranularModel.png  used on input line 287.
+Package pdftex.def Info: ./Images/GranularModel.png  used on input line 299.
 (pdftex.def)             Requested size: 252.0pt x 158.98453pt.
-<./Images/Middle_Square_Reg.png, id=119, 433.62pt x 289.08pt>
+<./Images/Middle_Square_Reg.png, id=118, 433.62pt x 289.08pt>
 File: ./Images/Middle_Square_Reg.png Graphic file (type png)
 <use ./Images/Middle_Square_Reg.png>
-Package pdftex.def Info: ./Images/Middle_Square_Reg.png  used on input line 306
+Package pdftex.def Info: ./Images/Middle_Square_Reg.png  used on input line 318
 .
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Middle_Square_Loss.png, id=120, 433.62pt x 289.08pt>
+<./Images/Middle_Square_Loss.png, id=119, 433.62pt x 289.08pt>
 File: ./Images/Middle_Square_Loss.png Graphic file (type png)
 <use ./Images/Middle_Square_Loss.png>
-Package pdftex.def Info: ./Images/Middle_Square_Loss.png  used on input line 31
-0.
+Package pdftex.def Info: ./Images/Middle_Square_Loss.png  used on input line 32
+2.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Linear_Cong_Reg.png, id=121, 433.62pt x 289.08pt>
+<./Images/Linear_Cong_Reg.png, id=120, 433.62pt x 289.08pt>
 File: ./Images/Linear_Cong_Reg.png Graphic file (type png)
 <use ./Images/Linear_Cong_Reg.png>
-Package pdftex.def Info: ./Images/Linear_Cong_Reg.png  used on input line 319.
+Package pdftex.def Info: ./Images/Linear_Cong_Reg.png  used on input line 331.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Linear_Cong_Loss.png, id=122, 433.62pt x 289.08pt>
+<./Images/Linear_Cong_Loss.png, id=121, 433.62pt x 289.08pt>
 File: ./Images/Linear_Cong_Loss.png Graphic file (type png)
 <use ./Images/Linear_Cong_Loss.png>
-Package pdftex.def Info: ./Images/Linear_Cong_Loss.png  used on input line 323.
+Package pdftex.def Info: ./Images/Linear_Cong_Loss.png  used on input line 335.
 
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Lagged_Fib_Reg.png, id=123, 433.62pt x 289.08pt>
+<./Images/Lagged_Fib_Reg.png, id=122, 433.62pt x 289.08pt>
 File: ./Images/Lagged_Fib_Reg.png Graphic file (type png)
 <use ./Images/Lagged_Fib_Reg.png>
-Package pdftex.def Info: ./Images/Lagged_Fib_Reg.png  used on input line 332.
+Package pdftex.def Info: ./Images/Lagged_Fib_Reg.png  used on input line 344.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Lagged_Fib_Loss.png, id=124, 433.62pt x 289.08pt>
+<./Images/Lagged_Fib_Loss.png, id=123, 433.62pt x 289.08pt>
 File: ./Images/Lagged_Fib_Loss.png Graphic file (type png)
 <use ./Images/Lagged_Fib_Loss.png>
-Package pdftex.def Info: ./Images/Lagged_Fib_Loss.png  used on input line 336.
+Package pdftex.def Info: ./Images/Lagged_Fib_Loss.png  used on input line 348.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Park_Miller_Reg.png, id=125, 433.62pt x 289.08pt>
+<./Images/Park_Miller_Reg.png, id=124, 433.62pt x 289.08pt>
 File: ./Images/Park_Miller_Reg.png Graphic file (type png)
 <use ./Images/Park_Miller_Reg.png>
-Package pdftex.def Info: ./Images/Park_Miller_Reg.png  used on input line 345.
+Package pdftex.def Info: ./Images/Park_Miller_Reg.png  used on input line 357.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Park_Miller_Loss.png, id=126, 433.62pt x 289.08pt>
+<./Images/Park_Miller_Loss.png, id=125, 433.62pt x 289.08pt>
 File: ./Images/Park_Miller_Loss.png Graphic file (type png)
 <use ./Images/Park_Miller_Loss.png>
-Package pdftex.def Info: ./Images/Park_Miller_Loss.png  used on input line 349.
+Package pdftex.def Info: ./Images/Park_Miller_Loss.png  used on input line 361.
 
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Twister_Reg.png, id=127, 433.62pt x 289.08pt>
+<./Images/Twister_Reg.png, id=126, 433.62pt x 289.08pt>
 File: ./Images/Twister_Reg.png Graphic file (type png)
 <use ./Images/Twister_Reg.png>
-Package pdftex.def Info: ./Images/Twister_Reg.png  used on input line 358.
+Package pdftex.def Info: ./Images/Twister_Reg.png  used on input line 370.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
-<./Images/Twister_Loss.png, id=128, 433.62pt x 289.08pt>
+<./Images/Twister_Loss.png, id=127, 433.62pt x 289.08pt>
 File: ./Images/Twister_Loss.png Graphic file (type png)
 <use ./Images/Twister_Loss.png>
-Package pdftex.def Info: ./Images/Twister_Loss.png  used on input line 362.
+Package pdftex.def Info: ./Images/Twister_Loss.png  used on input line 374.
 (pdftex.def)             Requested size: 100.79846pt x 67.19716pt.
 
+Underfull \vbox (badness 2970) has occurred while \output is active []
+
+ [4 <./Images/PredictiveModel.png> <./Images/GranularModel.png> <./Images/Middl
+e_Square_Reg.png> <./Images/Middle_Square_Loss.png> <./Images/Linear_Cong_Reg.p
+ng> <./Images/Linear_Cong_Loss.png> <./Images/Lagged_Fib_Reg.png> <./Images/Lag
+ged_Fib_Loss.png> <./Images/Park_Miller_Reg.png> <./Images/Park_Miller_Loss.png
+>]
 (./Paper.bbl
 Underfull \hbox (badness 3895) in paragraph at lines 26--29
 []\OT1/ptm/m/n/8 Microsoft. Date-time.ticks prop-erty. [On-line]. Avail-
@@ -716,11 +729,6 @@ Overfull \hbox (9.76567pt too wide) in paragraph at lines 32--35
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ì in font ptmr7t!
-[4 <./Images/GranularModel.png> <./Images/Middle_Square_Reg.png> <./Images/Midd
-le_Square_Loss.png> <./Images/Linear_Cong_Reg.png> <./Images/Linear_Cong_Loss.p
-ng> <./Images/Lagged_Fib_Reg.png> <./Images/Lagged_Fib_Loss.png> <./Images/Park
-_Miller_Reg.png> <./Images/Park_Miller_Loss.png> <./Images/Twister_Reg.png> <./
-Images/Twister_Loss.png>]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ì in font ptmr7t!
@@ -751,23 +759,21 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 378.
-[5
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 378.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 405.
+[5 <./Images/Twister_Reg.png> <./Images/Twister_Loss.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 405.
  (./Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 378.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 378.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 405.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 405.
 Package rerunfilecheck Info: File `Paper.out' has not changed.
 (rerunfilecheck)             Checksum: C9052448A6B2347FD8A2D0BA1AB8A6CE;538.
  ) 
 Here is how much of TeX's memory you used:
- 10419 strings out of 494847
- 158706 string characters out of 6179080
- 258444 words of memory out of 5000000
- 13556 multiletter control sequences out of 15000+600000
- 48147 words of font info for 107 fonts, out of 8000000 for 9000
+ 10406 strings out of 494847
+ 158577 string characters out of 6179080
+ 261444 words of memory out of 5000000
+ 13548 multiletter control sequences out of 15000+600000
+ 44976 words of font info for 99 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  36i,10n,49p,1032b,858s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -781,7 +787,7 @@ symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Paper.pdf (5 pages, 584860 bytes).
+Output written on Paper.pdf (5 pages, 589518 bytes).
 PDF statistics:
  232 PDF objects out of 1000 (max. 8388607)
  182 compressed objects within 2 object streams
