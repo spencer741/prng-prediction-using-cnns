@@ -21,6 +21,16 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{Markell94}
+R.~Markell, ``“better than bessel ” linear phase filters for data
+  communications,'' 1994.
+
+\bibitem{CNN}
+{Wikipedia contributors}, ``Convolutional neural network --- {Wikipedia}{,} the
+  free encyclopedia,''
+  \url{https://en.wikipedia.org/w/index.php?title=Convolutional_neural_network&oldid=953234856},
+  2020, [Online; accessed 28-April-2020].
+
 \bibitem{msoftdocs}
 \BIBentryALTinterwordspacing
 Microsoft. Datetime.ticks property. [Online]. Available:
@@ -42,7 +52,7 @@ mhawke. Stackoverflow answer. [Online]. Available:
 \bibitem{MiddleSquare}
 \BIBentryALTinterwordspacing
 {Wikipedia contributors}, ``Middle-square method --- {Wikipedia}{,} the free
-  encyclopedia,'' 2020, [Online; accessed 24-April-2020 ]. [Online]. Available:
+  encyclopedia,'' 2020, [Online; accessed 24-April-2020]. [Online]. Available:
   \url{https://en.wikipedia.org/w/index.php?title=Middle-square_method&oldid=951418817}
 \BIBentrySTDinterwordspacing
 
@@ -76,7 +86,7 @@ S.~K. Park and K.~W. Miller, ``Random number generators: Good ones are hard to
 {Wikipedia contributors}, ``Lehmer random number generator --- {Wikipedia}{,}
   the free encyclopedia,''
   \url{https://en.wikipedia.org/w/index.php?title=Lehmer_random_number_generator&oldid=950526808},
-  2020, [Online; accessed 24-April-2020 ].
+  2020, [Online; accessed 24-April-2020].
 
 \bibitem{10.1145/146382.146383}
 \BIBentryALTinterwordspacing
