@@ -2,7 +2,7 @@
 
 ### Quick Links
 
-[Link to Paper] - Coming Soon.
+[Paper](https://github.com/CSCI4850/S20-team7-project/blob/master/Paper.pdf)
 
 [Milestones](https://github.com/CSCI4850/S20-team7-project/blob/master/Project%20Milestones.ipynb)
 
